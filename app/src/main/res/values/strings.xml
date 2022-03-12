@@ -1,3 +1,36 @@
 <resources>
-    <string name="app_name">work-iot-mobile</string>
+    <string name="app_name">WorkIOT</string>
+    <string name="createButton">Create</string>
+
+    <string name="benchpress">Bench-press</string>
+    <string name="deadlift">Deadlifts</string>
+    <string name="squat">Squats</string>
+
+    <string name="amount">Amount</string>
+    <string name="total">Total Reps</string>
+    <string name="reportTitle">Workout History</string>
+    <string name="action_workout">Create Workout</string>
+    <string name="action_report">Report</string>
+
+    <!--String values for the create screen -->
+    <string name="set_1">Set 1</string>
+    <string name="set_2">Set 2</string>
+    <string name="set_3">Set 3</string>
+    <string name="set_4">Set 4</string>
+    <string name="set_5">Set 5</string>
+
+    <string name="exercise_bench">Bench-Press</string>
+    <string name="exercise_deadlift">Deadlifts</string>
+    <string name="exercise_squat">Squats</string>
+
+    <string name="title_reps">Reps</string>
+    <string name="title_set">Set</string>
+    <string name="title_fail">Fail Reason</string>
+
+    <string-array name="reasons">
+        <item>N/A</item>
+        <item>Bar-tilt</item>
+        <item>Fatigue</item>
+        <item>Other</item>
+    </string-array>
 </resources>
