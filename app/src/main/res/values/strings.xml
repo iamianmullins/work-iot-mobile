@@ -43,4 +43,11 @@
     <string name="nav_header_subtitle">iamianmullins@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
+
+    <string name="action_about">About Us</string>
+    <string name="aboutus_message">WorkIOT\n\nWorkout tracking android application\n\n Thank you for trying my app\n\n Why not try using the app with the WorkIOT device..? </string>
+
+
+    <string name="workoutsNotFound">No Workouts Found Yet...\nGo workout!</string>
+    <string name="workoutError">Error : Couldn\'t add workout...</string>
 </resources>

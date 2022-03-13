@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.WorkoutFragment">
+    tools:context=".ui.workout.WorkoutFragment">
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
@@ -223,7 +223,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
 
-
     </LinearLayout>
 
     <ProgressBar
@@ -291,7 +290,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.948" />
-
 
     <RadioGroup
         android:id="@+id/exerciseType"

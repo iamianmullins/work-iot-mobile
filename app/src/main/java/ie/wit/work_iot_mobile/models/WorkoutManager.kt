@@ -8,27 +8,27 @@ internal fun getId(): Long {
     return lastId++
 }
 
-class WorkiotMemStore : WorkiotStore {
+object WorkoutManager : WorkoutStore {
 
-    val workouts = ArrayList<WorkiotModel>()
+    private val workouts = ArrayList<WorkoutModel>()
 
-    override fun findAll(): List<WorkiotModel> {
+    override fun findAll(): List<WorkoutModel> {
         return workouts
     }
 
-    override fun findById(id:Long) : WorkiotModel? {
-        val foundWorkout: WorkiotModel? = workouts.find { it.id == id }
+    override fun findById(id:Long) : WorkoutModel? {
+        val foundWorkout: WorkoutModel? = workouts.find { it.id == id }
         return foundWorkout
     }
 
-    override fun create(workout: WorkiotModel) {
+    override fun create(workout: WorkoutModel) {
         workout.id = getId()
         workouts.add(workout)
         logAll()
     }
 
     fun logAll() {
-        Timber.v("** Workout List **")
+        Timber.v("** Workouts List **")
         workouts.forEach { Timber.v("Workout ${it}") }
     }
 }

@@ -1,25 +1,27 @@
-package ie.wit.work_iot_mobile.fragments
+package ie.wit.work_iot_mobile.ui.workout
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.databinding.FragmentWorkoutBinding
-import ie.wit.work_iot_mobile.main.WorkIOTApp
-import ie.wit.work_iot_mobile.models.WorkiotModel
-import timber.log.Timber
+import ie.wit.work_iot_mobile.models.WorkoutModel
+
 
 class WorkoutFragment : Fragment() {
-    lateinit var app: WorkIOTApp
     var totalRepCount = 0
     private var _fragBinding: FragmentWorkoutBinding? = null
+    // This property is only valid between onCreateView and onDestroyView.
     private val fragBinding get() = _fragBinding!!
+    private lateinit var workoutViewModel: WorkoutViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        app = activity?.application as WorkIOTApp
         setHasOptionsMenu(true)
     }
 
@@ -27,10 +29,14 @@ class WorkoutFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _fragBinding = FragmentWorkoutBinding.inflate(inflater, container, false)
         val root = fragBinding.root
         activity?.title = getString(R.string.action_workout)
+
+        workoutViewModel = ViewModelProvider(this).get(WorkoutViewModel::class.java)
+        workoutViewModel.observableStatus.observe(viewLifecycleOwner, Observer {
+                status -> status?.let { render(status) }
+        })
 
         val reasons = resources.getStringArray(R.array.reasons)
         val repPickerCurrentArray = IntArray(5)
@@ -48,44 +54,59 @@ class WorkoutFragment : Fragment() {
             fragBinding.repCounter.setText("$one")
         }
 
+
+
+
         setButtonListener(fragBinding)
         return root;
     }
 
-
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            WorkoutFragment().apply {
-                arguments = Bundle().apply {}
+    private fun render(status: Boolean) {
+        when (status) {
+            true -> {
+                view?.let {
+                    //Uncomment this if you want to immediately return to Report
+                    //findNavController().popBackStack()
+                }
             }
+            false -> Toast.makeText(context,getString(R.string.workoutError),Toast.LENGTH_LONG).show()
+        }
     }
 
     fun setButtonListener(layout: FragmentWorkoutBinding) {
         layout.createButton.setOnClickListener {
-            val totalReps = if (fragBinding.repCounter.text.isNotEmpty())
-                fragBinding.repCounter.text.toString()
-                    .toInt() else fragBinding.repPicker1.value
+            val totalReps = if (layout.repCounter.text.isNotEmpty())
+                layout.repCounter.text.toString()
+                    .toInt() else layout.repPicker1.value
             val exerciseType =
-                if (fragBinding.exerciseType.checkedRadioButtonId == R.id.Benchpress)
+                if (layout.exerciseType.checkedRadioButtonId == R.id.Benchpress)
                     "Bench-press"
-                else if (fragBinding.exerciseType.checkedRadioButtonId == R.id.Deadlift)
+                else if (layout.exerciseType.checkedRadioButtonId == R.id.Deadlift)
                     "Deadlifts"
                 else "Squats"
-            val repsSet1 = fragBinding.repPicker1.toString()
-            val reasonSet1 = fragBinding.reasonPicker1.toString()
+            fragBinding.reasonPicker1.setOnValueChangedListener { _, _, newVal ->
+            }
+            val reasonSet1 =
+                if (layout.reasonPicker1.value.toString() == "0")
+                    "N/A"
+                else if (layout.reasonPicker1.value.toString() == "1")
+                    "Bar-tilt"
+                else if (layout.reasonPicker1.value.toString() == "2")
+                    "Fatigue"
+                else "Other"
 
+            val repsSet1 = layout.repPicker1.value.toString()
             totalRepCount += totalReps
-            fragBinding.progressBar.progress = totalRepCount
-            app.workoutsStore.create(
-                WorkiotModel(
-                    exerciseType = exerciseType,
-                    totalReps = totalReps,
-                    repsSet1 = repsSet1,
-                    reasonSet1 = reasonSet1
-                )
-            )
-            Timber.i("Total amount of reps entered $totalReps")
+            layout.progressBar.progress = totalRepCount
+            workoutViewModel.addWorkout(WorkoutModel(
+                exerciseType = exerciseType,
+                totalReps = totalReps,
+                repsSet1 = repsSet1,
+                reasonSet1 = reasonSet1
+            ))
+            Toast.makeText(context, "$exerciseType workout successfully added", Toast.LENGTH_SHORT).show()
+            totalRepCount = 0
+            //Timber.i("Total amount of reps entered $totalReps")
         }
     }
 
@@ -99,6 +120,7 @@ class WorkoutFragment : Fragment() {
             requireView().findNavController()) || super.onOptionsItemSelected(item)
     }
 
+
     override fun onDestroyView() {
         super.onDestroyView()
         _fragBinding = null
@@ -106,7 +128,7 @@ class WorkoutFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        totalRepCount = app.workoutsStore.findAll().sumOf { it.totalReps }
+        totalRepCount = 0
         fragBinding.progressBar.progress = totalRepCount
     }
 }

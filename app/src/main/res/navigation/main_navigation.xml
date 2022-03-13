@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/workoutFragment">
+    app:startDestination="@id/reportFragment">
 
     <fragment
         android:id="@+id/workoutFragment"
-        android:name="ie.wit.work_iot_mobile.fragments.WorkoutFragment"
+        android:name="ie.wit.work_iot_mobile.ui.workout.WorkoutFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_workout" >
         <action
@@ -18,10 +18,13 @@
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out"
             app:popUpTo="@id/workoutFragment" />
+        <action
+            android:id="@+id/action_workoutFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/reportFragment"
-        android:name="ie.wit.work_iot_mobile.fragments.ReportFragment"
+        android:name="ie.wit.work_iot_mobile.ui.report.ReportFragment"
         android:label="@string/reportTitle"
         tools:layout="@layout/fragment_report" >
         <action
@@ -32,5 +35,11 @@
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out"
             app:popUpTo="@id/reportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="ie.wit.work_iot_mobile.ui.about.AboutFragment"
+        android:label="@string/action_about"
+        tools:layout="@layout/fragment_about" >
     </fragment>
 </navigation>
