@@ -5,14 +5,26 @@
       <map>
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/drawable-v24/custom_border.xml" value="0.2775" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/drawable-v24/ic_circle_background.xml" value="0.1025" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/drawable/ic_menu_create.xml" value="0.135" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/drawable/ic_menu_report.xml" value="0.135" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/drawable/ic_menu_send.xml" value="0.1225" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/drawable/side_nav_bar.xml" value="0.1225" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/activity_donate.xml" value="0.5" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/activity_home.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/activity_report.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/activity_workout.xml" value="0.25" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/app_bar_home.xml" value="0.1" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/card_donation.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/card_workout.xml" value="0.22" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/content_home.xml" value="0.1" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/fragment_report.xml" value="0.1" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/fragment_workout.xml" value="0.1" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/home.xml" value="0.1" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/layout/nav_header.xml" value="0.1" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/menu/menu_donate.xml" value="0.18" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/menu/menu_report.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/menu/menu_workout.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/menu/nav_drawer_menu.xml" value="0.27239583333333334" />
       </map>
     </option>
   </component>

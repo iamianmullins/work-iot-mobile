@@ -9,7 +9,7 @@
     <string name="amount">Amount</string>
     <string name="total">Total Reps</string>
     <string name="reportTitle">Workout History</string>
-    <string name="action_workout">Create Workout</string>
+    <string name="action_workout">Add Workout</string>
     <string name="action_report">Report</string>
 
     <!--String values for the create screen -->
@@ -33,4 +33,14 @@
         <item>Fatigue</item>
         <item>Other</item>
     </string-array>
+
+    <!--Navigation Drawer -->
+    <string name="action_share">Share</string>
+    <string name="action_send">Send</string>
+    <string name="group_communicate">Communicate</string>
+
+    <string name="nav_header_title">WorkIOT</string>
+    <string name="nav_header_subtitle">iamianmullins@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
 </resources>
