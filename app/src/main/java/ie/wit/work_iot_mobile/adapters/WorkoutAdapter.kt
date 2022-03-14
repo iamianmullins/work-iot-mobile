@@ -11,7 +11,7 @@ interface WorkoutClickListener {
     fun onWorkoutClick(workout: WorkoutModel)
 }
 
-class WorkoutAdapter constructor(private var workouts: List<WorkoutModel>,
+class WorkoutAdapter constructor(private var workouts: ArrayList<WorkoutModel>,
                                   private val listener: WorkoutClickListener)
     : RecyclerView.Adapter<WorkoutAdapter.MainHolder>() {
 
@@ -27,11 +27,17 @@ class WorkoutAdapter constructor(private var workouts: List<WorkoutModel>,
         holder.bind(workout,listener)
     }
 
+    fun removeAt(position: Int) {
+        workouts.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
     override fun getItemCount(): Int = workouts.size
 
     inner class MainHolder(val binding : CardWorkoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(workout: WorkoutModel,  listener: WorkoutClickListener) {
+            binding.root.tag = workout._id
             binding.workout = workout
             binding.imageIcon.setImageResource(R.mipmap.ic_launcher_round)
             binding.root.setOnClickListener { listener.onWorkoutClick(workout) }
