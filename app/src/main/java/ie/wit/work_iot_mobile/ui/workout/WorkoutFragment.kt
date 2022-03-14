@@ -11,6 +11,7 @@ import androidx.navigation.ui.NavigationUI
 import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.databinding.FragmentWorkoutBinding
 import ie.wit.work_iot_mobile.models.WorkoutModel
+import ie.wit.work_iot_mobile.ui.report.ReportViewModel
 
 
 class WorkoutFragment : Fragment() {
@@ -128,7 +129,10 @@ class WorkoutFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        totalRepCount = 0
-        fragBinding.progressBar.progress = totalRepCount
+        val reportViewModel = ViewModelProvider(this).get(ReportViewModel::class.java)
+        reportViewModel.observableWorkoutList.observe(viewLifecycleOwner, Observer {
+            totalRepCount = 0
+            fragBinding.progressBar.progress = totalRepCount
+        })
     }
 }

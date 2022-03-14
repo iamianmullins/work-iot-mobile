@@ -50,4 +50,12 @@
 
     <string name="workoutsNotFound">No Workouts Found Yet...\nGo workout!</string>
     <string name="workoutError">Error : Couldn\'t add workout...</string>
+    <string name="messageLoading">Please Wait while the Workouts are Loading...</string>
+
+    <!-- Workout detail fragment -->
+    <string name="workoutDetails">Workout Details</string>
+    <string name="exercise">Exercise performed :</string>
+    <string name="reps1">Set 1 reps :</string>
+    <string name="reason1">Set 1 fail reason :</string>
+    <string name="timestamp">Timestamp :</string>
 </resources>

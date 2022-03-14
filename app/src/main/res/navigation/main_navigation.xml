@@ -35,11 +35,26 @@
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out"
             app:popUpTo="@id/reportFragment" />
+        <action
+            android:id="@+id/action_reportFragment_to_workoutDetailFragment"
+            app:destination="@id/workoutDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="ie.wit.work_iot_mobile.ui.about.AboutFragment"
         android:label="@string/action_about"
         tools:layout="@layout/fragment_about" >
+    </fragment>
+    <fragment
+        android:id="@+id/workoutDetailFragment"
+        android:name="ie.wit.work_iot_mobile.ui.workoutDetail.WorkoutDetailFragment"
+        android:label="workout_detail_fragment"
+        tools:layout="@layout/workout_detail_fragment" >
+        <action
+            android:id="@+id/action_workoutDetailFragment2_to_reportFragment"
+            app:destination="@id/reportFragment" />
+        <argument
+            android:name="workoutid"
+            app:argType="string" />
     </fragment>
 </navigation>

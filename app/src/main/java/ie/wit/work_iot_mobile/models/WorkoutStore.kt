@@ -1,7 +1,10 @@
 package ie.wit.work_iot_mobile.models
 
+import androidx.lifecycle.MutableLiveData
+
 interface WorkoutStore {
-    fun findAll() : List<WorkoutModel>
-    fun findById(id: Long) : WorkoutModel?
+    fun findAll(workoutList: MutableLiveData<List<WorkoutModel>>)
+    fun findById(id: String) : WorkoutModel?
     fun create(workout: WorkoutModel)
+    fun delete(id: String)
 }

@@ -42,7 +42,7 @@
                 android:layout_toEndOf="@+id/imageIcon"
                 android:text="@{Integer.toString(workout.totalReps)}"
                 android:textSize="24sp"
-                tools:text="€1000" />
+                tools:text="125" />
 
             <TextView
                 android:id="@+id/exerciseType"
