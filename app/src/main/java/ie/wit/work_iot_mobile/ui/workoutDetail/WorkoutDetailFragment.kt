@@ -6,12 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import ie.wit.work_iot_mobile.R
-import ie.wit.work_iot_mobile.databinding.FragmentWorkoutBinding
 import ie.wit.work_iot_mobile.databinding.WorkoutDetailFragmentBinding
+import ie.wit.work_iot_mobile.ui.auth.LoggedInViewModel
+import ie.wit.work_iot_mobile.ui.report.ReportViewModel
 import timber.log.Timber
 
 class WorkoutDetailFragment : Fragment() {
@@ -20,6 +21,8 @@ class WorkoutDetailFragment : Fragment() {
     private val args by navArgs<WorkoutDetailFragmentArgs>()
     private var _fragBinding: WorkoutDetailFragmentBinding? = null
     private val fragBinding get() = _fragBinding!!
+    private val loggedInViewModel : LoggedInViewModel by activityViewModels()
+    private val reportViewModel : ReportViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?
@@ -29,6 +32,19 @@ class WorkoutDetailFragment : Fragment() {
 
         detailViewModel = ViewModelProvider(this).get(WorkoutDetailViewModel::class.java)
         detailViewModel.observableWorkout.observe(viewLifecycleOwner, Observer { render() })
+
+        fragBinding.editWorkoututton.setOnClickListener {
+            detailViewModel.updateWorkout(loggedInViewModel.liveFirebaseUser.value?.email!!,
+                args.workoutid, fragBinding.workoutsvm?.observableWorkout!!.value!!)
+            findNavController().navigateUp()
+        }
+
+        fragBinding.deleteWorkoutButton.setOnClickListener {
+            reportViewModel.delete(loggedInViewModel.liveFirebaseUser.value?.email!!,
+                detailViewModel.observableWorkout.value?._id!!)
+            findNavController().navigateUp()
+        }
+
         return root
     }
 
@@ -40,8 +56,8 @@ class WorkoutDetailFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        detailViewModel.getWorkout(args.workoutid)
-
+        detailViewModel.getWorkout(loggedInViewModel.liveFirebaseUser.value?.email!!,
+            args.workoutid)
     }
 
     override fun onDestroyView() {

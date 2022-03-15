@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -11,6 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.databinding.FragmentWorkoutBinding
 import ie.wit.work_iot_mobile.models.WorkoutModel
+import ie.wit.work_iot_mobile.ui.auth.LoggedInViewModel
 import ie.wit.work_iot_mobile.ui.report.ReportViewModel
 
 
@@ -20,6 +22,8 @@ class WorkoutFragment : Fragment() {
     // This property is only valid between onCreateView and onDestroyView.
     private val fragBinding get() = _fragBinding!!
     private lateinit var workoutViewModel: WorkoutViewModel
+    private val reportViewModel: ReportViewModel by activityViewModels()
+    private val loggedInViewModel : LoggedInViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,7 +107,8 @@ class WorkoutFragment : Fragment() {
                 exerciseType = exerciseType,
                 totalReps = totalReps,
                 repsSet1 = repsSet1,
-                reasonSet1 = reasonSet1
+                reasonSet1 = reasonSet1,
+                email = loggedInViewModel.liveFirebaseUser.value?.email!!
             ))
             Toast.makeText(context, "$exerciseType workout successfully added", Toast.LENGTH_SHORT).show()
             totalRepCount = 0
@@ -129,10 +134,8 @@ class WorkoutFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val reportViewModel = ViewModelProvider(this).get(ReportViewModel::class.java)
-        reportViewModel.observableWorkoutList.observe(viewLifecycleOwner, Observer {
-            totalRepCount = 0
-            fragBinding.progressBar.progress = totalRepCount
-        })
+        totalRepCount = 0
+        fragBinding.progressBar.progress = totalRepCount
+
     }
 }

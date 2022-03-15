@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object WorkoutClient {
-    val serviceURL = "https://donationweb-hdip-server.herokuapp.com"
+    val serviceURL = "https://donationweb-hdip-mu-server.herokuapp.com"
 
     fun getApi() : WorkoutService {
 

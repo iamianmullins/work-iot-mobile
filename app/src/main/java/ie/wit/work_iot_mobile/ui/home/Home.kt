@@ -1,15 +1,18 @@
-package ie.wit.work_iot_mobile.activities
+package ie.wit.work_iot_mobile.ui.home
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.navigation.ui.*
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.firebase.auth.FirebaseUser
 import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.databinding.HomeBinding
@@ -40,7 +43,7 @@ class Home : AppCompatActivity() {
         // menu should be considered as top level destinations.
 
         appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.workoutFragment, R.id.reportFragment, R.id.aboutFragment), drawerLayout)
+                R.id.workoutFragment, R.id.reportFragment, R.id.aboutFragment), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         val navView = homeBinding.navView

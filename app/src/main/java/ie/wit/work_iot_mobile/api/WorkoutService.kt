@@ -6,19 +6,28 @@ import retrofit2.http.*
 
 interface WorkoutService {
     @GET("/donations")
-    fun getall(): Call<List<WorkoutModel>>
+    fun findall(): Call<List<WorkoutModel>>
 
-    @GET("/donations/{id}")
-    fun get(@Path("id") id: String): Call<WorkoutModel>
+    @GET("/donations/{email}")
+    fun findall(@Path("email") email: String?)
+            : Call<List<WorkoutModel>>
 
-    @DELETE("/donations/{id}")
-    fun delete(@Path("id") id: String): Call<WorkoutWrapper>
+    @GET("/donations/{email}/{id}")
+    fun get(@Path("email") email: String?,
+            @Path("id") id: String): Call<WorkoutModel>
 
-    @POST("/donations")
-    fun post(@Body workout: WorkoutModel): Call<WorkoutWrapper>
+    @DELETE("/donations/{email}/{id}")
+    fun delete(@Path("email") email: String?,
+               @Path("id") id: String): Call<WorkoutWrapper>
 
-    @PUT("/donations/{id}")
-    fun put(@Path("id") id: String,
+    @POST("/donations/{email}")
+    fun post(@Path("email") email: String?,
+             @Body workout: WorkoutModel)
+            : Call<WorkoutWrapper>
+
+    @PUT("/donations/{email}/{id}")
+    fun put(@Path("email") email: String?,
+            @Path("id") id: String,
             @Body workout: WorkoutModel
     ): Call<WorkoutWrapper>
 }

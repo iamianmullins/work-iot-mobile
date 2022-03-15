@@ -3,6 +3,7 @@ package ie.wit.work_iot_mobile.ui.report
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.firebase.auth.FirebaseUser
 import ie.wit.work_iot_mobile.models.WorkoutManager
 import ie.wit.work_iot_mobile.models.WorkoutModel
 import timber.log.Timber
@@ -16,25 +17,27 @@ class ReportViewModel : ViewModel() {
     val observableWorkoutList: LiveData<List<WorkoutModel>>
         get() = workoutList
 
+    var liveFirebaseUser = MutableLiveData<FirebaseUser>()
+
     init { load() }
 
     fun load() {
         try {
-            WorkoutManager.findAll(workoutList)
-            Timber.i("Retrofit Load Success : $workoutList.value")
+            WorkoutManager.findAll(liveFirebaseUser.value?.email!!, workoutList)
+            Timber.i("Report Load Success : ${workoutList.value.toString()}")
         }
         catch (e: Exception) {
-            Timber.i("Retrofit Load Error : $e.message")
+            Timber.i("Report Load Error : $e.message")
         }
     }
 
-    fun delete(id: String) {
+    fun delete(email: String, id: String) {
         try {
-            WorkoutManager.delete(id)
-            Timber.i("Retrofit Delete Success")
+            WorkoutManager.delete(email,id)
+            Timber.i("Report Delete Success")
         }
         catch (e: Exception) {
-            Timber.i("Retrofit Delete Error : $e.message")
+            Timber.i("Report Delete Error : $e.message")
         }
     }
 }

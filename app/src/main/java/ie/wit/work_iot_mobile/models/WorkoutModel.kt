@@ -8,8 +8,9 @@ import kotlinx.parcelize.Parcelize
 data class WorkoutModel(
     var _id: String = "N/A",
     @SerializedName("paymenttype")
-    val exerciseType: String = "N/A",
-    val repsSet1: String = "N/A",
-    val reasonSet1: String = "N/A",
-    val message: String = "n/a",
-    val totalReps: Int = 0) : Parcelable
+    var exerciseType: String = "N/A",
+    var repsSet1: String = "N/A",
+    var reasonSet1: String = "N/A",
+    var message: String = "n/a",
+    var totalReps: Int = 0,
+    val email: String = "joe@bloggs.com") : Parcelable

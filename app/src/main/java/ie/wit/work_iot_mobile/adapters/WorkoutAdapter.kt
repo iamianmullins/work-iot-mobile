@@ -37,7 +37,7 @@ class WorkoutAdapter constructor(private var workouts: ArrayList<WorkoutModel>,
     inner class MainHolder(val binding : CardWorkoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(workout: WorkoutModel,  listener: WorkoutClickListener) {
-            binding.root.tag = workout._id
+            binding.root.tag = workout
             binding.workout = workout
             binding.imageIcon.setImageResource(R.mipmap.ic_launcher_round)
             binding.root.setOnClickListener { listener.onWorkoutClick(workout) }
