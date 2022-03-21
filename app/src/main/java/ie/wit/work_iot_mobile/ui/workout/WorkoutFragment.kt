@@ -103,7 +103,9 @@ class WorkoutFragment : Fragment() {
             val repsSet1 = layout.repPicker1.value.toString()
             totalRepCount += totalReps
             layout.progressBar.progress = totalRepCount
-            workoutViewModel.addWorkout(WorkoutModel(
+            workoutViewModel.addWorkout(
+                loggedInViewModel.liveFirebaseUser,
+                WorkoutModel(
                 exerciseType = exerciseType,
                 totalReps = totalReps,
                 repsSet1 = repsSet1,

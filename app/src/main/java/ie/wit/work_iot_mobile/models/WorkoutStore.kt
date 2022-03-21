@@ -1,15 +1,21 @@
 package ie.wit.work_iot_mobile.models
 
 import androidx.lifecycle.MutableLiveData
+import com.google.firebase.auth.FirebaseUser
 
 interface WorkoutStore {
-    fun findAll(workoutList:
-                MutableLiveData<List<WorkoutModel>>)
-    fun findAll(email: String, workoutList:
-    MutableLiveData<List<WorkoutModel>>)
-    fun findById(email:String, id: String,
-                 workout: MutableLiveData<WorkoutModel>)
-    fun create(workout: WorkoutModel)
-    fun delete(email:String,id: String)
-    fun update(email:String,id: String,workout: WorkoutModel)
+    fun findAll(
+        userid: String,
+        workoutList:
+        MutableLiveData<List<WorkoutModel>>
+    )
+
+    fun findById(
+        userid: String, workoutId: String,
+        workout: MutableLiveData<WorkoutModel>
+    )
+
+    fun create(firebaseUser: MutableLiveData<FirebaseUser>, workout: WorkoutModel)
+    fun delete(userid: String, workoutId: String)
+    fun update(userid: String, workoutId: String, workout: WorkoutModel)
 }

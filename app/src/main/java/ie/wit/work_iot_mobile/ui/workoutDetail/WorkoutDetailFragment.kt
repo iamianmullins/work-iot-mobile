@@ -34,14 +34,14 @@ class WorkoutDetailFragment : Fragment() {
         detailViewModel.observableWorkout.observe(viewLifecycleOwner, Observer { render() })
 
         fragBinding.editWorkoututton.setOnClickListener {
-            detailViewModel.updateWorkout(loggedInViewModel.liveFirebaseUser.value?.email!!,
+            detailViewModel.updateWorkout(loggedInViewModel.liveFirebaseUser.value?.uid!!,
                 args.workoutid, fragBinding.workoutsvm?.observableWorkout!!.value!!)
             findNavController().navigateUp()
         }
 
         fragBinding.deleteWorkoutButton.setOnClickListener {
-            reportViewModel.delete(loggedInViewModel.liveFirebaseUser.value?.email!!,
-                detailViewModel.observableWorkout.value?._id!!)
+            reportViewModel.delete(loggedInViewModel.liveFirebaseUser.value?.uid!!,
+                detailViewModel.observableWorkout.value?.uid!!)
             findNavController().navigateUp()
         }
 
@@ -56,7 +56,7 @@ class WorkoutDetailFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        detailViewModel.getWorkout(loggedInViewModel.liveFirebaseUser.value?.email!!,
+        detailViewModel.getWorkout(loggedInViewModel.liveFirebaseUser.value?.uid!!,
             args.workoutid)
     }
 

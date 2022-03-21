@@ -3,7 +3,7 @@ package ie.wit.work_iot_mobile.ui.workoutDetail
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ie.wit.work_iot_mobile.models.WorkoutManager
+import ie.wit.work_iot_mobile.firebase.FirebaseDBManager
 import ie.wit.work_iot_mobile.models.WorkoutModel
 import timber.log.Timber
 import java.lang.Exception
@@ -15,9 +15,9 @@ class WorkoutDetailViewModel : ViewModel() {
         get() = workout
         set(value) {workout.value = value.value}
 
-    fun getWorkout(email:String, id: String) {
+    fun getWorkout(userid:String, id: String) {
         try {
-            WorkoutManager.findById(email, id, workout)
+            FirebaseDBManager.findById(userid, id, workout)
             Timber.i("Detail getWorkout() Success : ${workout.value.toString()}")
         }
         catch (e: Exception) {
@@ -25,9 +25,9 @@ class WorkoutDetailViewModel : ViewModel() {
         }
     }
 
-    fun updateWorkout(email:String, id: String, workout: WorkoutModel) {
+    fun updateWorkout(userid:String, id: String,workout: WorkoutModel) {
         try {
-            WorkoutManager.update(email, id, workout)
+            FirebaseDBManager.update(userid, id, workout)
             Timber.i("Detail update() Success : $workout")
         }
         catch (e: Exception) {

@@ -60,10 +60,11 @@ class ReportFragment : Fragment(), WorkoutClickListener {
         val swipeDeleteHandler = object : SwipeToDeleteCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 showLoader(loader,"Deleting Workout")
+                showLoader(loader,"Deleting Workout")
                 val adapter = fragBinding.recyclerView.adapter as WorkoutAdapter
                 adapter.removeAt(viewHolder.adapterPosition)
-                reportViewModel.delete(reportViewModel.liveFirebaseUser.value?.email!!,
-                    (viewHolder.itemView.tag as WorkoutModel)._id)
+                reportViewModel.delete(reportViewModel.liveFirebaseUser.value?.uid!!,
+                    (viewHolder.itemView.tag as WorkoutModel).uid)
                 hideLoader(loader)
             }
         }
@@ -102,7 +103,7 @@ class ReportFragment : Fragment(), WorkoutClickListener {
     }
 
     override fun onWorkoutClick(workout: WorkoutModel) {
-        val action = ReportFragmentDirections.actionReportFragmentToWorkoutDetailFragment(workout._id)
+        val action = ReportFragmentDirections.actionReportFragmentToWorkoutDetailFragment(workout.uid)
         findNavController().navigate(action)
     }
 

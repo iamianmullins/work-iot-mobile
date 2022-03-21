@@ -3,7 +3,8 @@ package ie.wit.work_iot_mobile.ui.workout
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ie.wit.work_iot_mobile.models.WorkoutManager
+import com.google.firebase.auth.FirebaseUser
+import ie.wit.work_iot_mobile.firebase.FirebaseDBManager
 import ie.wit.work_iot_mobile.models.WorkoutModel
 
 class WorkoutViewModel : ViewModel() {
@@ -13,9 +14,10 @@ class WorkoutViewModel : ViewModel() {
     val observableStatus: LiveData<Boolean>
         get() = status
 
-    fun addWorkout(workout: WorkoutModel) {
+    fun addWorkout(firebaseUser: MutableLiveData<FirebaseUser>,
+                   workout: WorkoutModel) {
         status.value = try {
-            WorkoutManager.create(workout)
+            FirebaseDBManager.create(firebaseUser,workout)
             true
         } catch (e: IllegalArgumentException) {
             false
