@@ -17,6 +17,8 @@ import ie.wit.work_iot_mobile.ui.report.ReportViewModel
 
 
 class WorkoutFragment : Fragment() {
+    var repPickerMax = 15
+    var pickerMin = 0
     var totalRepCount = 0
     private var _fragBinding: FragmentWorkoutBinding? = null
     // This property is only valid between onCreateView and onDestroyView.
@@ -46,11 +48,31 @@ class WorkoutFragment : Fragment() {
         val reasons = resources.getStringArray(R.array.reasons)
         val repPickerCurrentArray = IntArray(5)
 
-        fragBinding.repPicker1.minValue = 0
-        fragBinding.repPicker1.maxValue = 25
-        fragBinding.reasonPicker1.minValue = 0
+        fragBinding.repPicker1.minValue = setMin()
+        fragBinding.repPicker1.maxValue = setMax()
+        fragBinding.reasonPicker1.minValue = setMin()
         fragBinding.reasonPicker1.maxValue = reasons.size-1
         fragBinding.reasonPicker1.displayedValues= reasons
+        fragBinding.repPicker2.minValue = setMin()
+        fragBinding.repPicker2.maxValue = setMax()
+        fragBinding.reasonPicker2.minValue = setMin()
+        fragBinding.reasonPicker2.maxValue = reasons.size-1
+        fragBinding.reasonPicker2.displayedValues= reasons
+        fragBinding.repPicker3.minValue = setMin()
+        fragBinding.repPicker3.maxValue = setMax()
+        fragBinding.reasonPicker3.minValue = setMin()
+        fragBinding.reasonPicker3.maxValue = reasons.size-1
+        fragBinding.reasonPicker3.displayedValues= reasons
+        fragBinding.repPicker4.minValue = setMin()
+        fragBinding.repPicker4.maxValue = setMax()
+        fragBinding.reasonPicker4.minValue = setMin()
+        fragBinding.reasonPicker4.maxValue = reasons.size-1
+        fragBinding.reasonPicker4.displayedValues= reasons
+        fragBinding.repPicker5.minValue = setMin()
+        fragBinding.repPicker5.maxValue = setMax()
+        fragBinding.reasonPicker5.minValue = setMin()
+        fragBinding.reasonPicker5.maxValue = reasons.size-1
+        fragBinding.reasonPicker5.displayedValues= reasons
 
         fragBinding.repPicker1.setOnValueChangedListener { _, _, newVal ->
             repPickerCurrentArray[0] = newVal
@@ -58,12 +80,40 @@ class WorkoutFragment : Fragment() {
             var one: Int = repPickerCurrentArray.sum()
             fragBinding.repCounter.setText("$one")
         }
-
-
-
+        fragBinding.repPicker2.setOnValueChangedListener { _, _, newVal ->
+            repPickerCurrentArray[1] = newVal
+            //Display the newly selected number to repCounter
+            var one: Int = repPickerCurrentArray.sum()
+            fragBinding.repCounter.setText("$one")
+        }
+        fragBinding.repPicker3.setOnValueChangedListener { _, _, newVal ->
+            repPickerCurrentArray[2] = newVal
+            //Display the newly selected number to repCounter
+            var one: Int = repPickerCurrentArray.sum()
+            fragBinding.repCounter.setText("$one")
+        }
+        fragBinding.repPicker4.setOnValueChangedListener { _, _, newVal ->
+            repPickerCurrentArray[3] = newVal
+            //Display the newly selected number to repCounter
+            var one: Int = repPickerCurrentArray.sum()
+            fragBinding.repCounter.setText("$one")
+        }
+        fragBinding.repPicker5.setOnValueChangedListener { _, _, newVal ->
+            repPickerCurrentArray[4] = newVal
+            //Display the newly selected number to repCounter
+            var one: Int = repPickerCurrentArray.sum()
+            fragBinding.repCounter.setText("$one")
+        }
 
         setButtonListener(fragBinding)
         return root;
+    }
+
+    private fun setMax(): Int {
+        return repPickerMax
+    }
+    private fun setMin(): Int {
+        return pickerMin
     }
 
     private fun render(status: Boolean) {
@@ -99,8 +149,45 @@ class WorkoutFragment : Fragment() {
                 else if (layout.reasonPicker1.value.toString() == "2")
                     "Fatigue"
                 else "Other"
+            val reasonSet2 =
+                if (layout.reasonPicker1.value.toString() == "0")
+                    "N/A"
+                else if (layout.reasonPicker1.value.toString() == "1")
+                    "Bar-tilt"
+                else if (layout.reasonPicker1.value.toString() == "2")
+                    "Fatigue"
+                else "Other"
+            val reasonSet3 =
+                if (layout.reasonPicker1.value.toString() == "0")
+                    "N/A"
+                else if (layout.reasonPicker1.value.toString() == "1")
+                    "Bar-tilt"
+                else if (layout.reasonPicker1.value.toString() == "2")
+                    "Fatigue"
+                else "Other"
+            val reasonSet4 =
+                if (layout.reasonPicker1.value.toString() == "0")
+                    "N/A"
+                else if (layout.reasonPicker1.value.toString() == "1")
+                    "Bar-tilt"
+                else if (layout.reasonPicker1.value.toString() == "2")
+                    "Fatigue"
+                else "Other"
+            val reasonSet5 =
+                if (layout.reasonPicker1.value.toString() == "0")
+                    "N/A"
+                else if (layout.reasonPicker1.value.toString() == "1")
+                    "Bar-tilt"
+                else if (layout.reasonPicker1.value.toString() == "2")
+                    "Fatigue"
+                else "Other"
+
 
             val repsSet1 = layout.repPicker1.value.toString()
+            val repsSet2 = layout.repPicker1.value.toString()
+            val repsSet3 = layout.repPicker1.value.toString()
+            val repsSet4 = layout.repPicker1.value.toString()
+            val repsSet5 = layout.repPicker1.value.toString()
             totalRepCount += totalReps
             layout.progressBar.progress = totalRepCount
             workoutViewModel.addWorkout(
@@ -110,6 +197,14 @@ class WorkoutFragment : Fragment() {
                 totalReps = totalReps,
                 repsSet1 = repsSet1,
                 reasonSet1 = reasonSet1,
+                repsSet2 = repsSet2,
+                reasonSet2 = reasonSet2,
+                repsSet3 = repsSet3,
+                reasonSet3 = reasonSet3,
+                repsSet4 = repsSet4,
+                reasonSet4 = reasonSet4,
+                repsSet5 = repsSet5,
+                reasonSet5 = reasonSet5,
                 email = loggedInViewModel.liveFirebaseUser.value?.email!!
             ))
             Toast.makeText(context, "$exerciseType workout successfully added", Toast.LENGTH_SHORT).show()

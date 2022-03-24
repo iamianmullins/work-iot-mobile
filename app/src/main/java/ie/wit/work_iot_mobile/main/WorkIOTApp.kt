@@ -1,7 +1,6 @@
 package ie.wit.work_iot_mobile.main
 
 import android.app.Application
-import ie.wit.work_iot_mobile.models.WorkoutStore
 import timber.log.Timber
 
 class WorkIOTApp : Application() {

@@ -9,12 +9,12 @@
                 android:bottomLeftRadius="10dp" />
             <stroke
                 android:width="2dp"
-                android:color="@color/green_dark" />
+                android:color="?colorSecondary"/>
             <gradient
                 android:angle="135"
-                android:startColor="@color/black"
-                android:centerColor="@color/grey_dark"
-                android:endColor="@color/grey"/>
+                android:startColor="?colorOnPrimary"
+                android:centerColor="?colorSecondary"
+                android:endColor="?colorOnPrimary"/>
             <size android:height="8dp" />
         </shape>
     </item>
