@@ -16,6 +16,10 @@
             android:id="@+id/aboutFragment"
             android:icon="@drawable/ic_menu_aboutus"
             android:title="@string/action_about" />
+        <item
+            android:id="@+id/settingsFragment"
+            android:icon="@drawable/ic_menu_aboutus"
+            android:title="@string/action_settings" />
     </group>
 
     <item android:title="@string/group_communicate">

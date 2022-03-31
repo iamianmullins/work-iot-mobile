@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_workoutFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_workoutFragment_to_settingsFragment2"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/reportFragment"
@@ -46,6 +49,18 @@
         tools:layout="@layout/fragment_about" >
     </fragment>
     <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ie.wit.work_iot_mobile.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment2_to_settingsEditFragment"
+            app:destination="@id/settingsEditFragment" />
+        <action
+            android:id="@+id/action_settingsFragment2_to_workoutFragment"
+            app:destination="@id/workoutFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/workoutDetailFragment"
         android:name="ie.wit.work_iot_mobile.ui.workoutDetail.WorkoutDetailFragment"
         android:label="workout_detail_fragment"
@@ -57,4 +72,17 @@
             android:name="workoutid"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsEditFragment"
+        android:name="ie.wit.work_iot_mobile.ui.settingsEdit.SettingsEditFragment"
+        android:label="SettingsEditFragment"
+        tools:layout="@layout/settings_edit_fragment">
+        <action
+            android:id="@+id/action_settingsEditFragment_to_settingsFragment2"
+            app:destination="@id/settingsFragment" />
+        <argument
+            android:name="settingsId"
+            app:argType="string" />
+    </fragment>
+
 </navigation>

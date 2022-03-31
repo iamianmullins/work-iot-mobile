@@ -43,7 +43,7 @@ class Home : AppCompatActivity() {
         // menu should be considered as top level destinations.
 
         appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.workoutFragment, R.id.reportFragment, R.id.aboutFragment), drawerLayout)
+                R.id.workoutFragment, R.id.reportFragment, R.id.aboutFragment, R.id.settingsFragment), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         val navView = homeBinding.navView

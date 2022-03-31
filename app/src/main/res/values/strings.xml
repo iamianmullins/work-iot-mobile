@@ -11,6 +11,7 @@
     <string name="reportTitle">Workout History</string>
     <string name="action_workout">Add Workout</string>
     <string name="action_report">Report</string>
+    <string name="action_settings">Settings</string>
 
     <!--String values for the create screen -->
     <string name="set_1">Set 1</string>
@@ -18,6 +19,12 @@
     <string name="set_3">Set 3</string>
     <string name="set_4">Set 4</string>
     <string name="set_5">Set 5</string>
+
+    <string name="success_1">Success 1</string>
+    <string name="success_2">Success 2</string>
+    <string name="success_3">Success 3</string>
+    <string name="success_4">Success 4</string>
+    <string name="success_5">Success 5</string>
 
     <string name="exercise_bench">Bench-Press</string>
     <string name="exercise_deadlift">Deadlifts</string>
@@ -75,6 +82,7 @@
     <string name="signed_out">Signed Out</string>
     <string name="token_null">Token: null</string>
     <string name="hint_email">Email</string>
+    <string name="hint_nfc">Nfc Device</string>
     <string name="hint_password">Password</string>
     <string name="desc_firebase_lockup">Firebase logo and name</string>
     <string name="auth_failed">Authentication failed</string>

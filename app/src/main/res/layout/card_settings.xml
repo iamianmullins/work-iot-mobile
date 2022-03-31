@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="workout"
-            type="ie.wit.work_iot_mobile.models.WorkoutModel" />
+            name="userSetting"
+            type="ie.wit.work_iot_mobile.models.SettingsModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -16,11 +16,11 @@
         android:elevation="24dp">
 
         <RelativeLayout
-            android:id="@+id/cardWorkout"
+            android:id="@+id/cardSettings"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="@drawable/custom_border">
+            android:layout_height="600dp"
+            android:background="@drawable/custom_border"
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/imageIcon"
@@ -35,7 +35,7 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="750dp"
                 android:layout_below="@+id/imageIcon"
                 android:layout_alignStart="@+id/imageIcon"
                 android:layout_marginStart="0dp"
@@ -46,84 +46,109 @@
                     android:layout_height="match_parent" />
 
                 <TextView
-                    android:id="@+id/workoutTypeTitle"
+                    android:id="@+id/settingsGoalTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="25dp"
                     android:layout_toEndOf="@+id/imageIcon"
-                    android:text="Exercise Type"
+                    android:text="Exercise Goal"
                     android:textSize="24sp"
-                    tools:text="@string/exercise" />
+                    tools:text="Exercise Goal" />
 
                 <TextView
-                    android:id="@+id/workoutGoal"
+                    android:id="@+id/settingsGoal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:layout_toEndOf="@+id/imageIcon"
-                    android:text="@{workout.exerciseType}"
+                    android:text="@{userSetting.exerciseGoal}"
                     android:textSize="24sp"
-                    tools:text="@string/exercise" />
+                    tools:text="Exercise Goal" />
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
                 <TextView
-                    android:id="@+id/workoutEmailTitle"
+                    android:id="@+id/settingsNfcTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_toEndOf="@+id/workoutGoal"
-                    android:text="@string/hint_email"
+                    android:layout_marginTop="25dp"
+                    android:layout_toEndOf="@+id/settingsGoal"
+                    android:text="@string/hint_nfc"
                     android:textSize="24sp"
-                    tools:text="@string/hint_email" />
+                    tools:text="@string/hint_nfc" />
 
                 <TextView
-                    android:id="@+id/workoutEmail"
+                    android:id="@+id/settingsNfc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/workoutEmailTitle"
-                    android:layout_alignStart="@+id/workoutEmailTitle"
+                    android:layout_below="@+id/settingsGoal"
+                    android:layout_alignStart="@+id/settingsGoal"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:text="@{workout.email}"
+                    android:text="@{userSetting.nfc}"
                     android:textSize="24sp"
-                    tools:text="@string/hint_email" />
+                    tools:text="@string/hint_nfc" />
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
                 <TextView
-                    android:id="@+id/setTitle"
-                    android:layout_width="80dp"
+                    android:id="@+id/settingsOnermTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="25dp"
                     android:layout_toEndOf="@+id/settingsNfc"
-                    android:text="Set"
-                    android:textSize="16sp"
+                    android:text="Current One Rep Max"
+                    android:textSize="24sp"
                     tools:text="One Rep Max" />
 
                 <TextView
-                    android:id="@+id/successTitle"
+                    android:id="@+id/settingsOnerm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/settingsNfc"
                     android:layout_alignStart="@+id/settingsNfc"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:text="@{workout.reasonSet1}"
-                    android:textSize="16sp"
+                    android:text="@{userSetting.oneRm}"
+                    android:textSize="24sp"
                     tools:text="One Rep Max" />
 
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
+                <TextView
+                    android:id="@+id/settingsEmailTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_toEndOf="@+id/settingsOnerm"
+                    android:text="User Email"
+                    android:textSize="24sp"
+                    tools:text="@string/hint_email" />
+
+                <TextView
+                    android:id="@+id/settingsEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/settingsEmailTitle"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@{userSetting.email}"
+                    android:textSize="24sp"
+                    tools:text="@string/hint_email" />
             </TableLayout>
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </layout>

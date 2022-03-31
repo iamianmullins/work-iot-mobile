@@ -18,6 +18,7 @@ class WorkoutDetailViewModel : ViewModel() {
     fun getWorkout(userid:String, id: String) {
         try {
             FirebaseDBManager.findById(userid, id, workout)
+            Timber.i("Detail getWorkout() Success : ${FirebaseDBManager.findById(userid, id, workout)}")
             Timber.i("Detail getWorkout() Success : ${workout.value.toString()}")
         }
         catch (e: Exception) {

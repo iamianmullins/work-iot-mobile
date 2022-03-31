@@ -8,6 +8,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.databinding.FragmentWorkoutBinding
@@ -121,7 +122,7 @@ class WorkoutFragment : Fragment() {
             true -> {
                 view?.let {
                     //Uncomment this if you want to immediately return to Report
-                    //findNavController().popBackStack()
+                    findNavController().popBackStack()
                 }
             }
             false -> Toast.makeText(context,getString(R.string.workoutError),Toast.LENGTH_LONG).show()
@@ -194,7 +195,7 @@ class WorkoutFragment : Fragment() {
                 loggedInViewModel.liveFirebaseUser,
                 WorkoutModel(
                 exerciseType = exerciseType,
-                totalReps = totalReps,
+                totalReps = totalRepCount.toString(),
                 repsSet1 = repsSet1,
                 reasonSet1 = reasonSet1,
                 repsSet2 = repsSet2,
