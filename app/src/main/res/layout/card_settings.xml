@@ -46,27 +46,25 @@
                     android:layout_height="match_parent" />
 
                 <TextView
-                    android:id="@+id/settingsGoalTitle"
+                    android:id="@+id/settingsEmailTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="25dp"
-                    android:layout_toEndOf="@+id/imageIcon"
-                    android:text="Exercise Goal"
-                    android:textSize="24sp"
-                    tools:text="Exercise Goal" />
+                    android:layout_marginTop="12dp"
+                    android:text="User Email"
+                    android:textSize="20sp"
+                    tools:text="@string/hint_email" />
 
                 <TextView
-                    android:id="@+id/settingsGoal"
+                    android:id="@+id/settingsEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
+                    android:layout_below="@+id/settingsEmailTitle"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:layout_toEndOf="@+id/imageIcon"
-                    android:text="@{userSetting.exerciseGoal}"
-                    android:textSize="24sp"
-                    tools:text="Exercise Goal" />
+                    android:text="@{userSetting.email}"
+                    android:textSize="20sp"
+                    tools:text="@string/hint_email" />
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -77,10 +75,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="12dp"
                     android:layout_toEndOf="@+id/settingsGoal"
                     android:text="@string/hint_nfc"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     tools:text="@string/hint_nfc" />
 
                 <TextView
@@ -92,7 +90,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:text="@{userSetting.nfc}"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     tools:text="@string/hint_nfc" />
 
                 <TableRow
@@ -100,26 +98,26 @@
                     android:layout_height="match_parent" />
 
                 <TextView
-                    android:id="@+id/settingsOnermTitle"
+                    android:id="@+id/settingsOnermBpTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="12dp"
                     android:layout_toEndOf="@+id/settingsNfc"
-                    android:text="Current One Rep Max"
-                    android:textSize="24sp"
-                    tools:text="One Rep Max" />
+                    android:text="Current One Rep Max(Bench Press)"
+                    android:textSize="20sp"
+                    tools:text="Current One Rep Max(Bench Press)" />
 
                 <TextView
-                    android:id="@+id/settingsOnerm"
+                    android:id="@+id/settingsOnermBp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/settingsNfc"
                     android:layout_alignStart="@+id/settingsNfc"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:text="@{userSetting.oneRm}"
-                    android:textSize="24sp"
+                    android:text="@{userSetting.oneRmBp}"
+                    android:textSize="20sp"
                     tools:text="One Rep Max" />
 
                 <TableRow
@@ -127,26 +125,79 @@
                     android:layout_height="match_parent" />
 
                 <TextView
-                    android:id="@+id/settingsEmailTitle"
+                    android:id="@+id/settingsOnermDlTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="25dp"
-                    android:layout_toEndOf="@+id/settingsOnerm"
-                    android:text="User Email"
-                    android:textSize="24sp"
-                    tools:text="@string/hint_email" />
+                    android:layout_marginTop="12dp"
+                    android:layout_toEndOf="@+id/settingsOnermBp"
+                    android:text="Current One Rep Max(Deadlifts)"
+                    android:textSize="20sp"
+                    tools:text="Current One Rep Max(Deadlifts)" />
 
                 <TextView
-                    android:id="@+id/settingsEmail"
+                    android:id="@+id/settingsOnermDl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/settingsEmailTitle"
+                    android:layout_below="@+id/settingsOnermDlTitle"
+                    android:layout_alignStart="@+id/settingsOnermDlTitle"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:text="@{userSetting.email}"
-                    android:textSize="24sp"
-                    tools:text="@string/hint_email" />
+                    android:text="@{userSetting.oneRmDl}"
+                    android:textSize="20sp"
+                    tools:text="One Rep Max" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/settingsOnermSqTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_toEndOf="@+id/settingsOnermDl"
+                    android:text="Current One Rep Max(Squats)"
+                    android:textSize="20sp"
+                    tools:text="Current One Rep Max(Squats)" />
+
+                <TextView
+                    android:id="@+id/settingsOnermSq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/settingsOnermSqTitle"
+                    android:layout_alignStart="@+id/settingsOnermSqTitle"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@{userSetting.oneRmSq}"
+                    android:textSize="20sp"
+                    tools:text="One Rep Max" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/settingsGoalTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Exercise Goal"
+                    android:textSize="20sp"
+                    tools:text="Exercise Goal" />
+
+                <TextView
+                    android:id="@+id/settingsGoal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_toEndOf="@+id/settingsOnermSq"
+                    android:text="@{userSetting.exerciseGoal}"
+                    android:textSize="20sp"
+                    tools:text="Exercise Goal" />
+
             </TableLayout>
 
         </RelativeLayout>

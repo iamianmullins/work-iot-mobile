@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.databinding.FragmentWorkoutBinding
+import ie.wit.work_iot_mobile.helpers.getTime
 import ie.wit.work_iot_mobile.models.WorkoutModel
 import ie.wit.work_iot_mobile.ui.auth.LoggedInViewModel
 import ie.wit.work_iot_mobile.ui.report.ReportViewModel
@@ -149,46 +150,57 @@ class WorkoutFragment : Fragment() {
                     "Bar-tilt"
                 else if (layout.reasonPicker1.value.toString() == "2")
                     "Fatigue"
+                else if (layout.reasonPicker1.value.toString() == "3")
+                    "Multiple"
                 else "Other"
             val reasonSet2 =
-                if (layout.reasonPicker1.value.toString() == "0")
+                if (layout.reasonPicker2.value.toString() == "0")
                     "N/A"
-                else if (layout.reasonPicker1.value.toString() == "1")
+                else if (layout.reasonPicker2.value.toString() == "1")
                     "Bar-tilt"
-                else if (layout.reasonPicker1.value.toString() == "2")
+                else if (layout.reasonPicker2.value.toString() == "2")
                     "Fatigue"
+                else if (layout.reasonPicker2.value.toString() == "3")
+                    "Multiple"
                 else "Other"
             val reasonSet3 =
-                if (layout.reasonPicker1.value.toString() == "0")
+                if (layout.reasonPicker3.value.toString() == "0")
                     "N/A"
-                else if (layout.reasonPicker1.value.toString() == "1")
+                else if (layout.reasonPicker3.value.toString() == "1")
                     "Bar-tilt"
-                else if (layout.reasonPicker1.value.toString() == "2")
+                else if (layout.reasonPicker3.value.toString() == "2")
                     "Fatigue"
+                else if (layout.reasonPicker3.value.toString() == "3")
+                    "Multiple"
                 else "Other"
             val reasonSet4 =
-                if (layout.reasonPicker1.value.toString() == "0")
+                if (layout.reasonPicker4.value.toString() == "0")
                     "N/A"
-                else if (layout.reasonPicker1.value.toString() == "1")
+                else if (layout.reasonPicker4.value.toString() == "1")
                     "Bar-tilt"
-                else if (layout.reasonPicker1.value.toString() == "2")
+                else if (layout.reasonPicker4.value.toString() == "2")
                     "Fatigue"
+                else if (layout.reasonPicker4.value.toString() == "3")
+                    "Multiple"
                 else "Other"
             val reasonSet5 =
-                if (layout.reasonPicker1.value.toString() == "0")
+                if (layout.reasonPicker5.value.toString() == "0")
                     "N/A"
-                else if (layout.reasonPicker1.value.toString() == "1")
+                else if (layout.reasonPicker5.value.toString() == "1")
                     "Bar-tilt"
-                else if (layout.reasonPicker1.value.toString() == "2")
+                else if (layout.reasonPicker5.value.toString() == "2")
                     "Fatigue"
+                else if (layout.reasonPicker5.value.toString() == "3")
+                    "Multiple"
                 else "Other"
 
 
+            val timest = getTime()
             val repsSet1 = layout.repPicker1.value.toString()
-            val repsSet2 = layout.repPicker1.value.toString()
-            val repsSet3 = layout.repPicker1.value.toString()
-            val repsSet4 = layout.repPicker1.value.toString()
-            val repsSet5 = layout.repPicker1.value.toString()
+            val repsSet2 = layout.repPicker2.value.toString()
+            val repsSet3 = layout.repPicker3.value.toString()
+            val repsSet4 = layout.repPicker4.value.toString()
+            val repsSet5 = layout.repPicker5.value.toString()
             totalRepCount += totalReps
             layout.progressBar.progress = totalRepCount
             workoutViewModel.addWorkout(
@@ -206,6 +218,7 @@ class WorkoutFragment : Fragment() {
                 reasonSet4 = reasonSet4,
                 repsSet5 = repsSet5,
                 reasonSet5 = reasonSet5,
+                timestamp = timest,
                 email = loggedInViewModel.liveFirebaseUser.value?.email!!
             ))
             Toast.makeText(context, "$exerciseType workout successfully added", Toast.LENGTH_SHORT).show()

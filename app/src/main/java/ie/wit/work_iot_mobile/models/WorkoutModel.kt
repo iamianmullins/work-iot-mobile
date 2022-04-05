@@ -9,7 +9,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class WorkoutModel(
     var uid: String = "N/A",
-    var guuid: String = "N/A",
     var exerciseGoal: String = "N/A",
     var exerciseType: String = "N/A",
     var workingWeight: String = "0",
@@ -24,14 +23,13 @@ data class WorkoutModel(
     var repsSet5: String = "N/A",
     var reasonSet5: String = "N/A",
     var totalReps: String = "0",
-    var timestamp: String = "N/A",
+    val timestamp: String = "N/A",
     val email: String = "joe@bloggs.com") : Parcelable
 {
     @Exclude
     fun toMap(): Map<String, Any?> {
         return mapOf(
             "uid" to uid,
-            "guuid" to guuid,
             "exerciseGoal" to exerciseGoal,
             "workingWeight" to workingWeight,
             "exerciseType" to exerciseType,

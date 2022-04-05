@@ -42,45 +42,18 @@
                 android:layout_marginTop="0dp">
 
                 <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <TextView
-                    android:id="@+id/workoutTypeTitle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="25dp"
-                    android:layout_toEndOf="@+id/imageIcon"
-                    android:text="Exercise Type"
-                    android:textSize="24sp"
-                    tools:text="@string/exercise" />
-
-                <TextView
-                    android:id="@+id/workoutGoal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toEndOf="@+id/imageIcon"
-                    android:text="@{workout.exerciseType}"
-                    android:textSize="24sp"
-                    tools:text="@string/exercise" />
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
 
                 <TextView
                     android:id="@+id/workoutEmailTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_toEndOf="@+id/workoutGoal"
-                    android:text="@string/hint_email"
-                    android:textSize="24sp"
+
+                    android:text="User Email"
+                    android:textSize="20sp"
                     tools:text="@string/hint_email" />
 
                 <TextView
@@ -88,41 +61,120 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/workoutEmailTitle"
-                    android:layout_alignStart="@+id/workoutEmailTitle"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:text="@{workout.email}"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     tools:text="@string/hint_email" />
-
+                </TableRow>
                 <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
                 <TextView
-                    android:id="@+id/setTitle"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="25dp"
-                    android:layout_toEndOf="@+id/settingsNfc"
-                    android:text="Set"
-                    android:textSize="16sp"
-                    tools:text="One Rep Max" />
-
-                <TextView
-                    android:id="@+id/successTitle"
+                    android:id="@+id/workoutGoalTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/settingsNfc"
-                    android:layout_alignStart="@+id/settingsNfc"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/workoutEmail"
+                    android:text="Workout Goal"
+                    android:textSize="20sp"
+                    android:textAlignment="textStart"
+                    tools:text="Workout Goal" />
+
+                <TextView
+                    android:id="@+id/workoutGoal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/workoutGoalTitle"
+                    android:layout_alignStart="@+id/workoutGoalTitle"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:text="@{workout.reasonSet1}"
-                    android:textSize="16sp"
-                    tools:text="One Rep Max" />
+                    android:text="@{workout.exerciseGoal}"
+                    android:textSize="20sp"
+                    tools:text="Workout Goal" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        android:id="@+id/workoutTypeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutGoal"
+                        android:text="Workout Type"
+                        android:textSize="20sp"
+                        android:textAlignment="textStart"
+                        tools:text="Workout Type" />
 
+                    <TextView
+                        android:id="@+id/workoutType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTypeTitle"
+                        android:layout_alignStart="@+id/workoutTypeTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@{workout.exerciseType}"
+                        android:textSize="20sp"
+                        tools:text="Workout Type" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        android:id="@+id/workoutTotalRepsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutType"
+                        android:text="Total Reps"
+                        android:textSize="20sp"
+                        android:textAlignment="textStart"
+                        tools:text="Total Reps" />
 
+                    <TextView
+                        android:id="@+id/workoutTotalReps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTotalRepsTitle"
+                        android:layout_alignStart="@+id/workoutTotalRepsTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@{workout.totalReps}"
+                        android:textSize="20sp"
+                        tools:text="Total Reps" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        android:id="@+id/workoutTimeStampTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutType"
+                        android:text="Time Stamp"
+                        android:textSize="20sp"
+                        android:textAlignment="textStart"
+                        tools:text="Time Stamp" />
+
+                    <TextView
+                        android:id="@+id/workoutTimeStamp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTimeStampTitle"
+                        android:layout_alignStart="@+id/workoutTimeStampTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@{workout.timestamp}"
+                        android:textSize="20sp"
+                        tools:text="Time stamp" />
+                </TableRow>
             </TableLayout>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

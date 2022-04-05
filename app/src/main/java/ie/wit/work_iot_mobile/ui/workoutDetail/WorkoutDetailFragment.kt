@@ -51,7 +51,7 @@ class WorkoutDetailFragment : Fragment() {
 
     private fun render() {
         fragBinding.workoutsvm = detailViewModel
-        Timber.i("Retrofit fragBinding.workoutsvm == $fragBinding.workoutsvm")
+        Timber.i("fragBinding.workoutsvm == $fragBinding.workoutsvm")
     }
 
     override fun onResume() {

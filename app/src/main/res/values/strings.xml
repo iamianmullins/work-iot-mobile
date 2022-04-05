@@ -6,6 +6,10 @@
     <string name="deadlift">Deadlifts</string>
     <string name="squat">Squats</string>
 
+    <string name="hypertrophy">Hypertrophy</string>
+    <string name="endurance">Endurance</string>
+    <string name="strength">Strength</string>
+
     <string name="amount">Amount</string>
     <string name="total">Total Reps</string>
     <string name="reportTitle">Workout History</string>
@@ -38,6 +42,7 @@
         <item>N/A</item>
         <item>Bar-tilt</item>
         <item>Fatigue</item>
+        <item>Multiple</item>
         <item>Other</item>
     </string-array>
 

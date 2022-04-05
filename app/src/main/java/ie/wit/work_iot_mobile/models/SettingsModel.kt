@@ -11,7 +11,9 @@ data class SettingsModel(
     var uid: String = "N/A",
     var exerciseGoal: String = "N/A",
     var nfc: String = "N/A",
-    var oneRm: String = "0",
+    var oneRmBp: String = "0",
+    var oneRmDl: String = "0",
+    var oneRmSq: String = "0",
     var guuid: String = "0",
     val email: String = "joe@bloggs.com") : Parcelable
 {
@@ -21,7 +23,9 @@ data class SettingsModel(
             "uid" to uid,
             "exerciseGoal" to exerciseGoal,
             "nfc" to nfc,
-            "oneRm" to oneRm,
+            "oneRmBp" to oneRmBp,
+            "oneRmDl" to oneRmDl,
+            "oneRmSq" to oneRmSq,
             "email" to email
         )
     }
