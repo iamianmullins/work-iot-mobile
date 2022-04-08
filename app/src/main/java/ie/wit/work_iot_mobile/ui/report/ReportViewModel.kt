@@ -10,6 +10,7 @@ import timber.log.Timber
 import java.lang.Exception
 
 class ReportViewModel : ViewModel() {
+    var readOnly = MutableLiveData(false)
 
     private val workoutList =
         MutableLiveData<List<WorkoutModel>>()
@@ -21,8 +22,20 @@ class ReportViewModel : ViewModel() {
 
     init { load() }
 
+    fun loadAll() {
+        try {
+            readOnly.value = true
+            FirebaseDBManager.findAll(workoutList)
+            Timber.i("Report LoadAll Success : ${workoutList.value.toString()}")
+        }
+        catch (e: Exception) {
+            Timber.i("Report LoadAll Error : $e.message")
+        }
+    }
+
     fun load() {
         try {
+            readOnly.value = false
             FirebaseDBManager.findAll(liveFirebaseUser.value?.uid!!, workoutList)
             Timber.i("Report Load Success : ${workoutList.value.toString()}")
         }

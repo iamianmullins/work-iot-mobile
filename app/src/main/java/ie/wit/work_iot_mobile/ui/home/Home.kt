@@ -14,11 +14,13 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.firebase.auth.FirebaseUser
+import com.squareup.picasso.Picasso
 import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.databinding.HomeBinding
 import ie.wit.work_iot_mobile.databinding.NavHeaderBinding
 import ie.wit.work_iot_mobile.ui.auth.LoggedInViewModel
 import ie.wit.work_iot_mobile.ui.auth.Login
+import ie.wit.work_iot_mobile.utils.customTransformation
 
 class Home : AppCompatActivity() {
 
@@ -71,7 +73,15 @@ class Home : AppCompatActivity() {
     private fun updateNavHeader(currentUser: FirebaseUser) {
         var headerView = homeBinding.navView.getHeaderView(0)
         navHeaderBinding = NavHeaderBinding.bind(headerView)
-        navHeaderBinding.navHeaderEmail.text = currentUser.email
+        navHeaderBinding.navHeaderName.text = currentUser.displayName
+        if(currentUser.photoUrl != null && currentUser.displayName != null) {
+            navHeaderBinding.navHeaderName.text = currentUser.displayName
+            Picasso.get().load(currentUser.photoUrl)
+                .resize(200, 200)
+                .transform(customTransformation())
+                .centerCrop()
+                .into(navHeaderBinding.navHeaderImage)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

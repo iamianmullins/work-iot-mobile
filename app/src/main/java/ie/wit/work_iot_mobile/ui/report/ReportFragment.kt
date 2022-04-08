@@ -3,6 +3,7 @@ package ie.wit.work_iot_mobile.ui.report
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -83,6 +84,16 @@ class ReportFragment : Fragment(), WorkoutClickListener {
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_report, menu)
+        val item = menu.findItem(R.id.toggleWorkouts) as MenuItem
+        item.setActionView(R.layout.togglebutton_layout)
+        val toggleWorkoutList: SwitchCompat = item.actionView.findViewById(R.id.toggleButton)
+        toggleWorkoutList.isChecked = false
+
+        toggleWorkoutList.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) reportViewModel.loadAll()
+            else reportViewModel.load()
+        }
+
         super.onCreateOptionsMenu(menu, inflater)
     }
 
@@ -92,7 +103,7 @@ class ReportFragment : Fragment(), WorkoutClickListener {
     }
 
     private fun render(workoutList: ArrayList<WorkoutModel>) {
-        fragBinding.recyclerView.adapter = WorkoutAdapter(workoutList,this)
+        fragBinding.recyclerView.adapter = WorkoutAdapter(workoutList,this, reportViewModel.readOnly.value!!)
         if (workoutList.isEmpty()) {
             fragBinding.recyclerView.visibility = View.GONE
             fragBinding.workoutsNotFound.visibility = View.VISIBLE
@@ -104,14 +115,18 @@ class ReportFragment : Fragment(), WorkoutClickListener {
 
     override fun onWorkoutClick(workout: WorkoutModel) {
         val action = ReportFragmentDirections.actionReportFragmentToWorkoutDetailFragment(workout.uid)
-        findNavController().navigate(action)
+        if(!reportViewModel.readOnly.value!!)
+            findNavController().navigate(action)
     }
 
     fun setSwipeRefresh() {
         fragBinding.swiperefresh.setOnRefreshListener {
             fragBinding.swiperefresh.isRefreshing = true
             showLoader(loader,"Downloading Workouts")
-            reportViewModel.load()
+            if(reportViewModel.readOnly.value!!)
+                reportViewModel.loadAll()
+            else
+                reportViewModel.load()
         }
     }
 

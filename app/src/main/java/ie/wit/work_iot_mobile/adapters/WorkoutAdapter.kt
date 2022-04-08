@@ -12,14 +12,15 @@ interface WorkoutClickListener {
 }
 
 class WorkoutAdapter constructor(private var workouts: ArrayList<WorkoutModel>,
-                                  private val listener: WorkoutClickListener)
-    : RecyclerView.Adapter<WorkoutAdapter.MainHolder>() {
+                                 private val listener: WorkoutClickListener,
+                                 private val readOnly: Boolean)
+: RecyclerView.Adapter<WorkoutAdapter.MainHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
         val binding = CardWorkoutBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return MainHolder(binding)
+        return MainHolder(binding,readOnly)
     }
 
     override fun onBindViewHolder(holder: MainHolder, position: Int) {
@@ -34,8 +35,9 @@ class WorkoutAdapter constructor(private var workouts: ArrayList<WorkoutModel>,
 
     override fun getItemCount(): Int = workouts.size
 
-    inner class MainHolder(val binding : CardWorkoutBinding) : RecyclerView.ViewHolder(binding.root) {
-
+    inner class MainHolder(val binding : CardWorkoutBinding, private val readOnly: Boolean)
+        : RecyclerView.ViewHolder(binding.root) {
+        val readOnlyRow = readOnly
         fun bind(workout: WorkoutModel,  listener: WorkoutClickListener) {
             binding.root.tag = workout
             binding.workout = workout

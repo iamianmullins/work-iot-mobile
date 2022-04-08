@@ -19,7 +19,6 @@
     </style>
 
     <style name="Theme.Workiotmobile.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.Workiotmobile.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- START Firebase Resources-->
@@ -62,4 +61,9 @@
         <item name="android:textSize">30sp</item>
     </style>
     <!-- END Firebase Resources-->
+
+    <style name="toggleStyle">
+        <item name="colorControlActivated">@color/colorWhite</item>
+        <item name="colorControlHighlight">@color/black</item>
+    </style>
 </resources>

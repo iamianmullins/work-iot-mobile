@@ -34,6 +34,11 @@
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/menu/menu_report.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/menu/menu_workout.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Mulli/AndroidStudioProjects/workiotmobile/app/src/main/res/menu/nav_drawer_menu.xml" value="0.27239583333333334" />
+        <entry key="app/src/main/res/layout/card_settings.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/login.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/settings_edit_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/togglebutton_layout.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/menu/menu_report.xml" value="0.17916666666666667" />
       </map>
     </option>
   </component>

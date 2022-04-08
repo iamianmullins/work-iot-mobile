@@ -10,6 +10,9 @@ interface WorkoutStore {
         MutableLiveData<List<WorkoutModel>>
     )
 
+    fun findAll(workoutList:
+                MutableLiveData<List<WorkoutModel>>)
+
     fun findById(
         userid: String, workoutId: String,
         workout: MutableLiveData<WorkoutModel>
