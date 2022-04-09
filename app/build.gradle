@@ -66,6 +66,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.2'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.4'
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
 
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.makeramen:roundedimageview:2.3.0'

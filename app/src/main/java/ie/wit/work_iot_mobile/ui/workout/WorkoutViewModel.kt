@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseUser
 import ie.wit.work_iot_mobile.firebase.FirebaseDBManager
+import ie.wit.work_iot_mobile.firebase.FirebaseImageManager
 import ie.wit.work_iot_mobile.models.WorkoutModel
 
 class WorkoutViewModel : ViewModel() {
@@ -17,6 +18,7 @@ class WorkoutViewModel : ViewModel() {
     fun addWorkout(firebaseUser: MutableLiveData<FirebaseUser>,
                    workout: WorkoutModel) {
         status.value = try {
+            workout.profilepic = FirebaseImageManager.imageUri.value.toString()
             FirebaseDBManager.create(firebaseUser,workout)
             true
         } catch (e: IllegalArgumentException) {

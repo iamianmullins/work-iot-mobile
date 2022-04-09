@@ -160,4 +160,25 @@ object FirebaseDBManager : WorkoutStore {
 
         database.updateChildren(childUpdate)
     }
+
+    fun updateImageRef(userid: String,imageUri: String) {
+
+        val userWorkouts = database.child("user-workouts").child(userid)
+        val allWorkouts= database.child("workouts")
+
+        userWorkouts.addListenerForSingleValueEvent(
+            object : ValueEventListener {
+                override fun onCancelled(error: DatabaseError) {}
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    snapshot.children.forEach {
+                        //Update Users imageUri
+                        it.ref.child("profilepic").setValue(imageUri)
+                        //Update all workouts that match 'it'
+                        val workout = it.getValue(WorkoutModel::class.java)
+                        allWorkouts.child(workout!!.uid!!)
+                            .child("profilepic").setValue(imageUri)
+                    }
+                }
+            })
+    }
 }

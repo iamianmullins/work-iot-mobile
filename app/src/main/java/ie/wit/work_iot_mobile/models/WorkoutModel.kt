@@ -9,6 +9,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class WorkoutModel(
     var uid: String = "N/A",
+    var profilepic: String = "",
     var exerciseGoal: String = "N/A",
     var exerciseType: String = "N/A",
     var workingWeight: String = "0",
@@ -30,6 +31,7 @@ data class WorkoutModel(
     fun toMap(): Map<String, Any?> {
         return mapOf(
             "uid" to uid,
+            "profilepic" to profilepic,
             "exerciseGoal" to exerciseGoal,
             "workingWeight" to workingWeight,
             "exerciseType" to exerciseType,

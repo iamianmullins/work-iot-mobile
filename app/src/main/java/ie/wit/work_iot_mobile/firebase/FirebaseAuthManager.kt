@@ -9,6 +9,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import ie.wit.work_iot_mobile.firebase.FirebaseImageManager
 import ie.wit.work_iot_mobile.R
 import timber.log.Timber
 
@@ -30,6 +31,8 @@ class FirebaseAuthManager(application: Application) {
             liveFirebaseUser.postValue(firebaseAuth!!.currentUser)
             loggedOut.postValue(false)
             errorStatus.postValue(false)
+            FirebaseImageManager.checkStorageForExistingProfilePic(
+                    firebaseAuth!!.currentUser!!.uid)
         }
         configureGoogleSignIn()
     }
@@ -62,6 +65,7 @@ class FirebaseAuthManager(application: Application) {
 
     fun logOut() {
         firebaseAuth!!.signOut()
+        googleSignInClient.value!!.signOut()
         loggedOut.postValue(true)
         errorStatus.postValue(false)
     }
