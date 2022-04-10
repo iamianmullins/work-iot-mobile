@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Splash Screen Theme. -->
+    <style name="Theme.AppSplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/grey_dark</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/workiotlogo</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.Workiotmobile</item>
+
+        <!-- Status bar and Nav bar configs -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/grey_dark</item>
+        <item name="android:navigationBarColor">@color/grey_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
