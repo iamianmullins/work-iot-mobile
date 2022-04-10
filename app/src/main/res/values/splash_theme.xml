@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Splash Screen Theme. -->
-    <style name="Theme.AppSplash" parent="Theme.SplashScreen">
+    <style name="Theme.AppSplash" parent="Theme.Workiotmobile">
         <item name="windowSplashScreenBackground">@color/grey_dark</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/workiotlogo</item>
         <item name="windowSplashScreenAnimationDuration">1000</item>
