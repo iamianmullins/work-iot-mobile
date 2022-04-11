@@ -63,7 +63,11 @@
 
     <string name="workoutsNotFound">No Workouts Found...\nGo workout!</string>
     <string name="workoutError">Error : Couldn\'t add workout...</string>
-    <string name="messageLoading">Please Wait while the Workouts are Loading...</string>
+    <string name="messageLoading">Please Wait while the Workouts are Loading...</string>Settings not Found, please refresh this page!
+
+    <string name="settingsNotFound">Settings not Found,\n please refresh this page!</string>
+    <string name="settingsError">Error : Couldn\'t add user settings...</string>
+    <string name="settingsLoading">Please Wait while your settings are Loading...</string>
 
     <!-- Workout detail fragment -->
     <string name="workoutDetails">Workout Details</string>

@@ -42,10 +42,6 @@ class SettingsFragment : Fragment(), SettingsClickListener {
         loader = createLoader(requireActivity())
 
         fragBinding.recyclerView.layoutManager = LinearLayoutManager(activity)
-        fragBinding.fab.setOnClickListener {
-            val action = SettingsFragmentDirections.actionSettingsFragment2ToWorkoutFragment()
-            findNavController().navigate(action)
-        }
         showLoader(loader,"Downloading Settings")
         settingsViewModel.observableSettingsList.observe(viewLifecycleOwner, Observer {
                 settings ->
@@ -60,8 +56,9 @@ class SettingsFragment : Fragment(), SettingsClickListener {
                             email = loggedInViewModel.liveFirebaseUser.value?.email!!
                         )
                     )
+                    Toast.makeText(context, "User settings successfully added", Toast.LENGTH_SHORT).show()
                 }
-                Toast.makeText(context, "workout Settings successfully added", Toast.LENGTH_SHORT).show()
+
             }
         })
 

@@ -47,7 +47,11 @@
         <entry key="app/src/main/res/drawable/workiotlogo.xml" value="0.2065" />
         <entry key="app/src/main/res/layout/card_settings.xml" value="0.1" />
         <entry key="app/src/main/res/layout/card_workout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_report.xml" value="0.18697916666666667" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.18697916666666667" />
+        <entry key="app/src/main/res/layout/fragment_workout.xml" value="0.18697916666666667" />
         <entry key="app/src/main/res/layout/home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/loading.xml" value="0.18697916666666667" />
         <entry key="app/src/main/res/layout/login.xml" value="0.18" />
         <entry key="app/src/main/res/layout/settings_edit_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/togglebutton_layout.xml" value="0.17916666666666667" />

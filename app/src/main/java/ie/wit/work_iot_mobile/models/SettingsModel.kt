@@ -9,13 +9,12 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class SettingsModel(
     var uid: String = "N/A",
-    var exerciseGoal: String = "N/A",
+    var exerciseGoal: String = "Strength",
     var nfc: String = "N/A",
-    var oneRmBp: String = "0",
-    var oneRmDl: String = "0",
-    var oneRmSq: String = "0",
-    var guuid: String = "0",
-    val email: String = "joe@bloggs.com") : Parcelable
+    var oneRmBp: String = "10",
+    var oneRmDl: String = "10",
+    var oneRmSq: String = "10",
+    val email: String = "jimuser@workiot.com") : Parcelable
 {
     @Exclude
     fun toMap(): Map<String, Any?> {

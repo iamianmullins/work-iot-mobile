@@ -103,22 +103,24 @@ object FirebaseDBManager : WorkoutStore {
         database.updateChildren(childUpdate)
     }
 
-    fun findLatest(userid: String, workoutList: MutableLiveData<List<SettingsModel>>) {
+    fun findLatest(userid: String, settingList: MutableLiveData<List<SettingsModel>>) {
         database.child("user-settings").child(userid)
             .addValueEventListener(object : ValueEventListener {
                 override fun onCancelled(error: DatabaseError) {
-                    Timber.i("Firebase Workout error : ${error.message}")
+                    Timber.i("Firebase Settings error : ${error.message}")
                 }
 
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val localList = ArrayList<SettingsModel>()
                     val children = snapshot.children
-                    val workout = children.first().getValue(SettingsModel::class.java)
-                    localList.add(workout!!)
+                    children.forEach {
+                        val settings = it.getValue(SettingsModel::class.java)
+                        localList.add(settings!!)
+                    }
                     database.child("user-settings").child(userid)
                         .removeEventListener(this)
 
-                    workoutList.value = localList
+                    settingList.value = localList
                 }
             })
     }
@@ -143,7 +145,6 @@ object FirebaseDBManager : WorkoutStore {
             return
         }
         workout.uid = key
-        workout.guuid = uid
         val workoutValues = workout.toMap()
 
         val childAdd = HashMap<String, Any>()
