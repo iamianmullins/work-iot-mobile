@@ -1,25 +1,28 @@
 package ie.wit.work_iot_mobile.ui.workoutDetail
 
-import androidx.lifecycle.ViewModelProvider
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.databinding.WorkoutDetailFragmentBinding
 import ie.wit.work_iot_mobile.ui.auth.LoggedInViewModel
 import ie.wit.work_iot_mobile.ui.report.ReportViewModel
 import ie.wit.work_iot_mobile.utils.*
 import timber.log.Timber
 
-class WorkoutDetailFragment : Fragment() {
 
+class WorkoutDetailFragment : Fragment() {
+    var repPickerMax = 15
+    var pickerMin = 0
+    var maxPickerWeight = 250
     private lateinit var detailViewModel: WorkoutDetailViewModel
     private val args by navArgs<WorkoutDetailFragmentArgs>()
     private var _fragBinding: WorkoutDetailFragmentBinding? = null
@@ -35,6 +38,19 @@ class WorkoutDetailFragment : Fragment() {
 
         detailViewModel = ViewModelProvider(this).get(WorkoutDetailViewModel::class.java)
         detailViewModel.observableWorkout.observe(viewLifecycleOwner, Observer { render() })
+
+        fragBinding.workoutReps1.minValue = pickerMin
+        fragBinding.workoutReps1.maxValue = repPickerMax
+        fragBinding.workoutReps2.minValue = pickerMin
+        fragBinding.workoutReps2.maxValue = repPickerMax
+        fragBinding.workoutReps3.minValue = pickerMin
+        fragBinding.workoutReps3.maxValue = repPickerMax
+        fragBinding.workoutReps4.minValue = pickerMin
+        fragBinding.workoutReps4.maxValue = repPickerMax
+        fragBinding.workoutReps5.minValue = pickerMin
+        fragBinding.workoutReps5.maxValue = repPickerMax
+        fragBinding.workingWeight.minValue = pickerMin
+        fragBinding.workingWeight.maxValue = maxPickerWeight
 
         fragBinding.editWorkoututton.setOnClickListener {
             val totalreps = getTotal()
@@ -74,6 +90,9 @@ class WorkoutDetailFragment : Fragment() {
             reportViewModel.delete(loggedInViewModel.liveFirebaseUser.value?.uid!!,
                 detailViewModel.observableWorkout.value?.uid!!)
             findNavController().navigateUp()
+        }
+        fragBinding.linkWorkoutButton.setOnClickListener {
+            setupHyperlink()
         }
 
         return root
@@ -128,5 +147,22 @@ class WorkoutDetailFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _fragBinding = null
+    }
+
+    fun setupHyperlink() {
+        var typePosition = fragBinding.workoutType.selectedItemPosition
+        var type = getTypeStr(typePosition)
+        when (type) {
+            "Bench-Press" -> {
+                val link = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=vthMCtgVtFw&t=137s"))
+                startActivity(link)}
+            "Deadlift" -> {
+                val link = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hCDzSR6bW10&t=47s"))
+                startActivity(link)}
+            else -> {
+                val link = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=nEQQle9-0NA"))
+                startActivity(link)}
+        }
+
     }
 }

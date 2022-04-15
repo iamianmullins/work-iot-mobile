@@ -22,6 +22,7 @@ class WorkoutFragment : Fragment() {
     var repPickerMax = 15
     var pickerMin = 0
     var totalRepCount = 0
+    var maxPickerWeight = 250
     private var _fragBinding: FragmentWorkoutBinding? = null
     // This property is only valid between onCreateView and onDestroyView.
     private val fragBinding get() = _fragBinding!!
@@ -49,7 +50,8 @@ class WorkoutFragment : Fragment() {
 
         val reasons = resources.getStringArray(R.array.failReason)
         val repPickerCurrentArray = IntArray(5)
-
+        fragBinding.workingWeightPicker.minValue = setMin()
+        fragBinding.workingWeightPicker.maxValue = maxPickerWeight
         fragBinding.repPicker1.minValue = setMin()
         fragBinding.repPicker1.maxValue = setMax()
         fragBinding.reasonPicker1.minValue = setMin()
@@ -202,26 +204,28 @@ class WorkoutFragment : Fragment() {
             val repsSet3 = layout.repPicker3.value
             val repsSet4 = layout.repPicker4.value
             val repsSet5 = layout.repPicker5.value
+            val workingWeight = layout.workingWeightPicker.value
+
             totalRepCount += totalReps
-            layout.progressBar.progress = totalRepCount
             workoutViewModel.addWorkout(
                 loggedInViewModel.liveFirebaseUser,
                 WorkoutModel(
-                exerciseType = exerciseType,
-                totalReps = totalRepCount.toString(),
-                repsSet1 = repsSet1,
-                reasonSet1 = reasonSet1,
-                repsSet2 = repsSet2,
-                reasonSet2 = reasonSet2,
-                repsSet3 = repsSet3,
-                reasonSet3 = reasonSet3,
-                repsSet4 = repsSet4,
-                reasonSet4 = reasonSet4,
-                repsSet5 = repsSet5,
-                reasonSet5 = reasonSet5,
-                timestamp = timest,
-                exerciseGoal = region,
-                email = loggedInViewModel.liveFirebaseUser.value?.email!!
+                    exerciseType = exerciseType,
+                    totalReps = totalRepCount.toString(),
+                    repsSet1 = repsSet1,
+                    reasonSet1 = reasonSet1,
+                    repsSet2 = repsSet2,
+                    reasonSet2 = reasonSet2,
+                    repsSet3 = repsSet3,
+                    reasonSet3 = reasonSet3,
+                    repsSet4 = repsSet4,
+                    reasonSet4 = reasonSet4,
+                    repsSet5 = repsSet5,
+                    reasonSet5 = reasonSet5,
+                    timestamp = timest,
+                    exerciseGoal = region,
+                    workingWeight = workingWeight,
+                    email = loggedInViewModel.liveFirebaseUser.value?.email!!
             ))
             Toast.makeText(context, "$exerciseType workout successfully added", Toast.LENGTH_SHORT).show()
             totalRepCount = 0
@@ -248,7 +252,5 @@ class WorkoutFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         totalRepCount = 0
-        fragBinding.progressBar.progress = totalRepCount
-
     }
 }

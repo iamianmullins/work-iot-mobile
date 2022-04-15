@@ -20,7 +20,7 @@
             android:id="@+id/table1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -47,8 +47,6 @@
                     android:id="@+id/workoutEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/workoutEmailTitle"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:text="@{workoutsvm.observableWorkout.email}"
                     android:textSize="20sp"
@@ -65,8 +63,6 @@
                     android:id="@+id/workoutGoalTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/workoutEmail"
                     android:text="Workout Goal"
                     android:textAlignment="textStart"
                     android:textSize="20sp"
@@ -78,9 +74,6 @@
                     android:id="@+id/workoutGoal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/workoutGoalTitle"
-                    android:layout_alignStart="@+id/workoutGoalTitle"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:entries="@array/fitnessGoals"
                     android:textSize="20sp"
@@ -97,8 +90,6 @@
                     android:id="@+id/workoutTypeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/workoutGoal"
                     android:text="Workout Type"
                     android:textAlignment="textStart"
                     android:textSize="20sp"
@@ -109,8 +100,6 @@
                     android:id="@+id/workoutType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/workoutTypeTitle"
-                    android:layout_alignStart="@+id/workoutTypeTitle"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:entries="@array/workoutTypes"
@@ -128,8 +117,6 @@
                     android:id="@+id/workoutTotalRepsTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/workoutType"
                     android:text="Total Reps"
                     android:textAlignment="textStart"
                     android:textSize="20sp"
@@ -140,9 +127,7 @@
                     android:id="@+id/workoutTotalReps"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/workoutTotalRepsTitle"
-                    android:layout_alignStart="@+id/workoutTotalRepsTitle"
-                    android:layout_marginLeft="20dp"
+
                     android:layout_marginTop="0dp"
                     android:text="@={workoutsvm.observableWorkout.totalReps}"
                     android:textSize="20sp"
@@ -159,8 +144,6 @@
                     android:id="@+id/workoutTimeStampTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/workoutType"
                     android:text="Time Stamp"
                     android:textAlignment="textStart"
                     android:textSize="20sp"
@@ -171,14 +154,40 @@
                     android:id="@+id/workoutTimeStamp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/workoutTimeStampTitle"
-                    android:layout_alignStart="@+id/workoutTimeStampTitle"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:text="@{workoutsvm.observableWorkout.timestamp}"
                     android:textSize="20sp"
                     android:layout_margin="8dp"
                     tools:text="Time stamp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp">
+                <TextView
+                    android:id="@+id/workingWeightTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/workingWeight"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    tools:text="@string/workingWeight" />
+
+
+                <NumberPicker
+                    android:id="@+id/workingWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:value="@={workoutsvm.observableWorkout.workingWeight}"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
             </TableRow>
         </TableLayout>
 
@@ -186,7 +195,7 @@
             android:id="@+id/table2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             app:layout_constraintTop_toBottomOf="@id/table1"
@@ -194,9 +203,9 @@
             android:background="@drawable/custom_border"
             tools:layout_editor_absoluteX="8dp">
                 <TableRow
-                    android:layout_width="331dp"
-                    android:layout_height="408dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.2"
                     app:layout_constraintStart_toStartOf="parent"
@@ -258,18 +267,19 @@
                     android:layout_marginRight="8dp"
                     tools:text="Set1" />
 
-                <EditText
+
+                <NumberPicker
                     android:id="@+id/workoutReps1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="right"
+                    android:padding="3dip"
                     android:layout_marginTop="0dp"
-                    android:textAlignment="center"
-                    android:text="@={``+ workoutsvm.observableWorkout.repsSet1}"
-                    android:inputType="phone"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    tools:text="0" />
+                    android:layout_weight="1"
+                    android:value="@={workoutsvm.observableWorkout.repsSet1}"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
                 <Spinner
                     android:id="@+id/workoutReason1"
                     android:layout_width="wrap_content"
@@ -303,18 +313,19 @@
                     android:layout_marginRight="8dp"
                     tools:text="Set2" />
 
-                <EditText
+
+                <NumberPicker
                     android:id="@+id/workoutReps2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="right"
+                    android:padding="3dip"
                     android:layout_marginTop="0dp"
-                    android:textAlignment="center"
-                    android:text="@={``+ workoutsvm.observableWorkout.repsSet2}"
-                    android:inputType="phone"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    tools:text="0" />
+                    android:layout_weight="1"
+                    android:value="@={workoutsvm.observableWorkout.repsSet2}"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
                 <Spinner
                     android:id="@+id/workoutReason2"
                     android:layout_width="wrap_content"
@@ -348,18 +359,18 @@
                     android:layout_marginRight="8dp"
                     tools:text="Set3" />
 
-                <EditText
+                <NumberPicker
                     android:id="@+id/workoutReps3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="right"
+                    android:padding="3dip"
                     android:layout_marginTop="0dp"
-                    android:textAlignment="center"
-                    android:text="@={``+ workoutsvm.observableWorkout.repsSet3}"
-                    android:inputType="phone"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    tools:text="0" />
+                    android:layout_weight="1"
+                    android:value="@={workoutsvm.observableWorkout.repsSet3}"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
                 <Spinner
                     android:id="@+id/workoutReason3"
                     android:layout_width="wrap_content"
@@ -393,18 +404,18 @@
                     android:layout_marginRight="8dp"
                     tools:text="Set4" />
 
-                <EditText
+                <NumberPicker
                     android:id="@+id/workoutReps4"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="right"
+                    android:padding="3dip"
                     android:layout_marginTop="0dp"
-                    android:textAlignment="center"
-                    android:text="@={``+ workoutsvm.observableWorkout.repsSet4}"
-                    android:inputType="phone"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    tools:text="0" />
+                    android:layout_weight="1"
+                    android:value="@={workoutsvm.observableWorkout.repsSet4}"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
                 <Spinner
                     android:id="@+id/workoutReason4"
                     android:layout_width="wrap_content"
@@ -438,18 +449,18 @@
                     android:layout_marginRight="8dp"
                     tools:text="Set5" />
 
-                <EditText
+                <NumberPicker
                     android:id="@+id/workoutReps5"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="right"
+                    android:padding="3dip"
                     android:layout_marginTop="0dp"
-                    android:textAlignment="center"
-                    android:text="@={``+ workoutsvm.observableWorkout.repsSet5}"
-                    android:inputType="phone"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    tools:text="0" />
+                    android:layout_weight="1"
+                    android:value="@={workoutsvm.observableWorkout.repsSet5}"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
                 <Spinner
                     android:id="@+id/workoutReason5"
                     android:layout_width="wrap_content"
@@ -462,7 +473,23 @@
                     android:layout_marginRight="8dp"
                     tools:text="N/A" />
             </TableRow>
+            <TableRow>
+
+            </TableRow>
         </TableLayout>
+
+        <Button
+            android:id="@+id/linkWorkoutButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="68dp"
+            android:text="@string/workoutTutorial"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <Button
             android:id="@+id/editWorkoututton"
             android:layout_width="0dp"

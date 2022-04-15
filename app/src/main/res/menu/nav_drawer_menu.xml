@@ -5,6 +5,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/dashboardFragment"
+            android:icon="@drawable/ic_dashboard_24"
+            android:title="@string/action_dashboard" />
+        <item
             android:id="@+id/workoutFragment"
             android:icon="@drawable/ic_menu_create"
             android:title="@string/action_workout" />
@@ -16,22 +20,14 @@
             android:id="@+id/aboutFragment"
             android:icon="@drawable/ic_menu_aboutus"
             android:title="@string/action_about" />
-        <item
-            android:id="@+id/settingsFragment"
-            android:icon="@drawable/ic_menu_aboutus"
-            android:title="@string/action_settings" />
     </group>
 
-    <item android:title="@string/group_communicate">
+    <item android:title="@string/group_settings">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/action_share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/action_send" />
+                android:id="@+id/settingsFragment"
+                android:icon="@drawable/ic_menu_aboutus"
+                android:title="@string/action_settings" />
         </menu>
     </item>
     <item android:title="Access Control">

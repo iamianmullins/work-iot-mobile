@@ -35,4 +35,5 @@ class WorkoutDetailViewModel : ViewModel() {
             Timber.i("Detail update() Error : $e.message")
         }
     }
+
 }

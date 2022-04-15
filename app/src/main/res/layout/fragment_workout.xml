@@ -12,7 +12,6 @@
         android:layout_height="450dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/custom_border"
-
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,6 +30,7 @@
                 android:id="@+id/title_set"
                 android:layout_width="125dp"
                 android:layout_height="25dp"
+                android:textSize="20dp"
                 android:text="@string/title_set" />
 
             <TextView
@@ -38,6 +38,7 @@
                 android:layout_width="125dp"
                 android:layout_height="25dp"
                 android:text="@string/title_reps"
+                android:textSize="20dp"
                 android:textAlignment="center" />
 
             <TextView
@@ -45,6 +46,7 @@
                 android:layout_width="125dp"
                 android:layout_height="25dp"
                 android:text="@string/title_fail"
+                android:textSize="20dp"
                 android:textAlignment="center" />
 
         </LinearLayout>
@@ -61,6 +63,7 @@
                 android:id="@+id/set1_textView"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
                 android:text="@string/set_1" />
 
             <NumberPicker
@@ -68,7 +71,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
-
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -79,6 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -97,6 +101,7 @@
                 android:id="@+id/set2_textView"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
                 android:text="@string/set_2" />
 
             <NumberPicker
@@ -104,6 +109,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -114,6 +120,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -132,6 +139,7 @@
                 android:id="@+id/set3_textView"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
                 android:text="@string/set_3" />
 
             <NumberPicker
@@ -139,6 +147,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -149,6 +158,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -167,6 +177,7 @@
                 android:id="@+id/set4_textView"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
                 android:text="@string/set_4" />
 
             <NumberPicker
@@ -174,6 +185,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -184,6 +196,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -202,6 +215,7 @@
                 android:id="@+id/set5_textView"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
                 android:text="@string/set_5" />
 
             <NumberPicker
@@ -209,6 +223,7 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -219,76 +234,92 @@
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="349dp"
-        android:layout_height="14dp"
-        android:layout_above="@+id/createButton"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:indeterminate="false"
-        android:max="75"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/workWeight_textView"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="@string/workingWeight" />
+
+            <NumberPicker
+                android:id="@+id/workingWeightPicker"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 
     <Spinner
         android:id="@+id/selectGoal"
-        android:layout_width="123dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="254dp"
+        android:layout_height="26dp"
         android:entries="@array/fitnessGoals"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/createButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="@+id/exerciseType"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.108" />
 
     <TextView
-        android:id="@+id/total"
+        android:id="@+id/workingWeightTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/total"
+        android:textSize="20dp"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.086" />
 
     <TextView
         android:id="@+id/repCounter"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/total"
-        app:layout_constraintTop_toBottomOf="@+id/total"
+        app:layout_constraintEnd_toStartOf="@+id/exerciseType"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/workingWeightTitle"
         app:layout_constraintVertical_bias="0.0" />
+
+
 
     <Button
         android:id="@+id/createButton"
@@ -302,31 +333,30 @@
         android:text="@string/createButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exerciseType"
-        app:layout_constraintVertical_bias="0.948" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <RadioGroup
         android:id="@+id/exerciseType"
         android:layout_width="250dp"
         android:layout_height="150dp"
-        android:layout_above="@+id/progressBar"
+        android:textSize="20dp"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="90dp"
         android:layout_toStartOf="@+id/linearLayout2"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toEndOf="@+id/total"
-        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         app:layout_constraintVertical_bias="0.576">
 
         <RadioButton
             android:id="@+id/Benchpress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
             android:checked="false"
             android:layoutDirection="rtl"
             android:text="@string/benchpress"
@@ -336,6 +366,7 @@
             android:id="@+id/Deadlift"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
             android:checked="false"
             android:layoutDirection="rtl"
             android:text="@string/deadlift"
@@ -345,6 +376,7 @@
             android:id="@+id/Squat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
             android:checked="true"
             android:layoutDirection="rtl"
             android:text="@string/squat"

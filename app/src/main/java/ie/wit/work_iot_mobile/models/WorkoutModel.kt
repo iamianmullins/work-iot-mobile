@@ -12,7 +12,7 @@ data class WorkoutModel(
     var profilepic: String = "",
     var exerciseGoal: String = "N/A",
     var exerciseType: String = "N/A",
-    var workingWeight: String = "0",
+    var workingWeight: Int = 0,
     var repsSet1: Int = 0,
     var reasonSet1: String = "N/A",
     var repsSet2: Int = 0,
