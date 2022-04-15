@@ -13,19 +13,19 @@ data class WorkoutModel(
     var exerciseGoal: String = "N/A",
     var exerciseType: String = "N/A",
     var workingWeight: String = "0",
-    var repsSet1: String = "N/A",
+    var repsSet1: Int = 0,
     var reasonSet1: String = "N/A",
-    var repsSet2: String = "N/A",
+    var repsSet2: Int = 0,
     var reasonSet2: String = "N/A",
-    var repsSet3: String = "N/A",
+    var repsSet3: Int = 0,
     var reasonSet3: String = "N/A",
-    var repsSet4: String = "N/A",
+    var repsSet4: Int = 0,
     var reasonSet4: String = "N/A",
-    var repsSet5: String = "N/A",
+    var repsSet5: Int = 0,
     var reasonSet5: String = "N/A",
     var totalReps: String = "0",
-    val timestamp: String = "N/A",
-    val email: String = "joe@bloggs.com") : Parcelable
+    var timestamp: String = "N/A",
+    val email: String = "jim@user.com") : Parcelable
 {
     @Exclude
     fun toMap(): Map<String, Any?> {

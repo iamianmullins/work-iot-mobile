@@ -63,32 +63,10 @@ class SettingsFragment : Fragment(), SettingsClickListener {
         })
 
         setSwipeRefresh()
-
-        val swipeDeleteHandler = object : SwipeToDeleteCallback(requireContext()) {
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                showLoader(loader,"Wiping Settings")
-                val adapter = fragBinding.recyclerView.adapter as SettingsAdapter
-                adapter.removeAt(viewHolder.adapterPosition)
-                settingsViewModel.delete(settingsViewModel.liveFirebaseUser.value?.uid!!,
-                    (viewHolder.itemView.tag as SettingsModel).uid)
-                hideLoader(loader)
-            }
-        }
-        val itemTouchDeleteHelper = ItemTouchHelper(swipeDeleteHandler)
-        itemTouchDeleteHelper.attachToRecyclerView(fragBinding.recyclerView)
-
-        val swipeEditHandler = object : SwipeToEditCallback(requireContext()) {
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                onSettingsClick(viewHolder.itemView.tag as SettingsModel)
-            }
-        }
-        val itemTouchEditHelper = ItemTouchHelper(swipeEditHandler)
-        itemTouchEditHelper.attachToRecyclerView(fragBinding.recyclerView)
-
         return root
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_report, menu)
+        inflater.inflate(R.menu.menu_settings, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 

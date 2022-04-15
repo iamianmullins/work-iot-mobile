@@ -10,10 +10,10 @@ import kotlinx.parcelize.Parcelize
 data class SettingsModel(
     var uid: String = "N/A",
     var exerciseGoal: String = "Strength",
-    var nfc: String = "N/A",
-    var oneRmBp: String = "10",
-    var oneRmDl: String = "10",
-    var oneRmSq: String = "10",
+    var nfc: String = "",
+    var oneRmBp: Int = 25,
+    var oneRmDl: Int = 25,
+    var oneRmSq: Int = 25,
     val email: String = "jimuser@workiot.com") : Parcelable
 {
     @Exclude

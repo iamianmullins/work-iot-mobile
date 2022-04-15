@@ -12,10 +12,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.databinding.FragmentWorkoutBinding
-import ie.wit.work_iot_mobile.helpers.getTime
 import ie.wit.work_iot_mobile.models.WorkoutModel
 import ie.wit.work_iot_mobile.ui.auth.LoggedInViewModel
 import ie.wit.work_iot_mobile.ui.report.ReportViewModel
+import ie.wit.work_iot_mobile.utils.getTime
 
 
 class WorkoutFragment : Fragment() {
@@ -47,7 +47,7 @@ class WorkoutFragment : Fragment() {
                 status -> status?.let { render(status) }
         })
 
-        val reasons = resources.getStringArray(R.array.reasons)
+        val reasons = resources.getStringArray(R.array.failReason)
         val repPickerCurrentArray = IntArray(5)
 
         fragBinding.repPicker1.minValue = setMin()
@@ -75,7 +75,7 @@ class WorkoutFragment : Fragment() {
         fragBinding.reasonPicker5.minValue = setMin()
         fragBinding.reasonPicker5.maxValue = reasons.size-1
         fragBinding.reasonPicker5.displayedValues= reasons
-
+        fragBinding.selectGoal.setSelection(0)
         fragBinding.repPicker1.setOnValueChangedListener { _, _, newVal ->
             repPickerCurrentArray[0] = newVal
             //Display the newly selected number to repCounter
@@ -194,13 +194,14 @@ class WorkoutFragment : Fragment() {
                     "Multiple"
                 else "Other"
 
+            val region = layout.selectGoal.selectedItem.toString()
 
             val timest = getTime()
-            val repsSet1 = layout.repPicker1.value.toString()
-            val repsSet2 = layout.repPicker2.value.toString()
-            val repsSet3 = layout.repPicker3.value.toString()
-            val repsSet4 = layout.repPicker4.value.toString()
-            val repsSet5 = layout.repPicker5.value.toString()
+            val repsSet1 = layout.repPicker1.value
+            val repsSet2 = layout.repPicker2.value
+            val repsSet3 = layout.repPicker3.value
+            val repsSet4 = layout.repPicker4.value
+            val repsSet5 = layout.repPicker5.value
             totalRepCount += totalReps
             layout.progressBar.progress = totalRepCount
             workoutViewModel.addWorkout(
@@ -219,6 +220,7 @@ class WorkoutFragment : Fragment() {
                 repsSet5 = repsSet5,
                 reasonSet5 = reasonSet5,
                 timestamp = timest,
+                exerciseGoal = region,
                 email = loggedInViewModel.liveFirebaseUser.value?.email!!
             ))
             Toast.makeText(context, "$exerciseType workout successfully added", Toast.LENGTH_SHORT).show()

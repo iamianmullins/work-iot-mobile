@@ -89,6 +89,7 @@
                     android:layout_alignStart="@+id/settingsGoal"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
+                    android:inputType="phone"
                     android:text="@{userSetting.nfc}"
                     android:textSize="20sp"
                     tools:text="@string/hint_nfc" />
@@ -116,7 +117,7 @@
                     android:layout_alignStart="@+id/settingsNfc"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:text="@{userSetting.oneRmBp}"
+                    android:text="@{Integer.toString(userSetting.oneRmBp)}"
                     android:textSize="20sp"
                     tools:text="One Rep Max" />
 
@@ -143,7 +144,7 @@
                     android:layout_alignStart="@+id/settingsOnermDlTitle"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:text="@{userSetting.oneRmDl}"
+                    android:text="@{Integer.toString(userSetting.oneRmDl)}"
                     android:textSize="20sp"
                     tools:text="One Rep Max" />
 
@@ -170,7 +171,7 @@
                     android:layout_alignStart="@+id/settingsOnermSqTitle"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:text="@{userSetting.oneRmSq}"
+                    android:text="@{Integer.toString(userSetting.oneRmSq)}"
                     android:textSize="20sp"
                     tools:text="One Rep Max" />
 

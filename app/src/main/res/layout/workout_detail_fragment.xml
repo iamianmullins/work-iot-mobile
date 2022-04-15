@@ -73,7 +73,8 @@
                     android:layout_margin="8dp"
                     tools:text="Workout Goal" />
 
-                <EditText
+
+                <Spinner
                     android:id="@+id/workoutGoal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -81,7 +82,7 @@
                     android:layout_alignStart="@+id/workoutGoalTitle"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:text="@={workoutsvm.observableWorkout.exerciseGoal}"
+                    android:entries="@array/fitnessGoals"
                     android:textSize="20sp"
                     android:layout_margin="8dp"
                     tools:text="Workout Goal" />
@@ -104,7 +105,7 @@
                     android:layout_margin="8dp"
                     tools:text="Workout Type" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/workoutType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,7 +113,7 @@
                     android:layout_alignStart="@+id/workoutTypeTitle"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
-                    android:text="@={workoutsvm.observableWorkout.exerciseType}"
+                    android:entries="@array/workoutTypes"
                     android:textSize="20sp"
                     android:layout_margin="8dp"
                     tools:text="Workout Type" />
@@ -135,7 +136,7 @@
                     android:layout_margin="8dp"
                     tools:text="Total Reps" />
 
-                <EditText
+                <TextView
                     android:id="@+id/workoutTotalReps"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -263,18 +264,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:textAlignment="center"
-                    android:text="@={workoutsvm.observableWorkout.repsSet1}"
+                    android:text="@={``+ workoutsvm.observableWorkout.repsSet1}"
+                    android:inputType="phone"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     tools:text="0" />
-                <EditText
+                <Spinner
                     android:id="@+id/workoutReason1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:textAlignment="center"
-                    android:text="@={workoutsvm.observableWorkout.reasonSet1}"
+                    android:entries="@array/failReason"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
@@ -307,18 +309,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:textAlignment="center"
-                    android:text="@={workoutsvm.observableWorkout.repsSet2}"
+                    android:text="@={``+ workoutsvm.observableWorkout.repsSet2}"
+                    android:inputType="phone"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     tools:text="0" />
-                <EditText
+                <Spinner
                     android:id="@+id/workoutReason2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:textAlignment="center"
-                    android:text="@={workoutsvm.observableWorkout.reasonSet2}"
+                    android:entries="@array/failReason"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
@@ -351,18 +354,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:textAlignment="center"
-                    android:text="@={workoutsvm.observableWorkout.repsSet3}"
+                    android:text="@={``+ workoutsvm.observableWorkout.repsSet3}"
+                    android:inputType="phone"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     tools:text="0" />
-                <EditText
+                <Spinner
                     android:id="@+id/workoutReason3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:textAlignment="center"
-                    android:text="@={workoutsvm.observableWorkout.reasonSet3}"
+                    android:entries="@array/failReason"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
@@ -395,18 +399,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:textAlignment="center"
-                    android:text="@={workoutsvm.observableWorkout.repsSet4}"
+                    android:text="@={``+ workoutsvm.observableWorkout.repsSet4}"
+                    android:inputType="phone"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     tools:text="0" />
-                <EditText
+                <Spinner
                     android:id="@+id/workoutReason4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:textAlignment="center"
-                    android:text="@={workoutsvm.observableWorkout.reasonSet4}"
+                    android:entries="@array/failReason"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
@@ -439,18 +444,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:textAlignment="center"
-                    android:text="@={workoutsvm.observableWorkout.repsSet5#}"
+                    android:text="@={``+ workoutsvm.observableWorkout.repsSet5}"
+                    android:inputType="phone"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     tools:text="0" />
-                <EditText
+                <Spinner
                     android:id="@+id/workoutReason5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:textAlignment="center"
-                    android:text="@={workoutsvm.observableWorkout.reasonSet5}"
+                    android:entries="@array/failReason"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"

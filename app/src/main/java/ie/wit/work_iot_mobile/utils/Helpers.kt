@@ -12,6 +12,8 @@ import com.makeramen.roundedimageview.RoundedTransformationBuilder
 import com.squareup.picasso.Transformation
 import ie.wit.work_iot_mobile.R
 import java.io.IOException
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 fun createLoader(activity: FragmentActivity) : AlertDialog {
     val loaderBuilder = AlertDialog.Builder(activity)
@@ -76,4 +78,110 @@ fun readImageUri(resultCode: Int, data: Intent?): Uri? {
         }
     }
     return uri
+}
+
+
+fun getTime(): String {
+    val local = LocalDateTime.now()
+
+    val format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+    val currentTime = local.format(format)
+
+    return currentTime
+}
+
+
+fun getGoalStr(goalPos: Int): String {
+    var goalStr = ""
+    if (goalPos == 0){
+        goalStr = "Endurance"
+    }
+    else if (goalPos == 1){
+        goalStr = "Hypertrophy"
+    }
+    else {
+        goalStr = "Strength"
+    }
+    return goalStr
+}
+
+fun getGoalPos(goalStr: String): Int {
+    var goalInt = 0
+    if (goalStr == "Endurance"){
+        goalInt = 0
+    }
+    else if (goalStr == "Hypertrophy"){
+        goalInt =1
+    }
+    else {
+        goalInt = 2
+    }
+    return  goalInt
+}
+
+fun getTypeStr(typePos: Int): String {
+    var typeStr = ""
+    if (typePos == 0){
+        typeStr = "Bench-Press"
+    }
+    else if (typePos == 1){
+        typeStr = "Deadlifts"
+    }
+    else {
+        typeStr = "Squats"
+    }
+    return typeStr
+}
+
+fun getTypePos(typeStr: String): Int {
+    var typeInt = 0
+    if (typeStr == "Bench-Press"){
+        typeInt = 0
+    }
+    else if (typeStr == "Deadlifts"){
+        typeInt = 1
+    }
+    else {
+        typeInt = 2
+    }
+    return  typeInt
+}
+
+fun getFailPos(reasonList: MutableList<String>): MutableList<Int> {
+   val returnReasons : MutableList<Int> = ArrayList()
+    for(reason in reasonList){
+        if (reason == "N/A"){
+            returnReasons.add(0)
+        }
+        else if (reason == "Bar-tilt"){
+            returnReasons.add(1)
+        }
+        else if (reason == "Fatigue"){
+            returnReasons.add(2)
+        }
+        else if (reason == "Multiple"){
+            returnReasons.add(3)
+        }
+        else {
+            returnReasons.add(4)
+        }
+    }
+    return returnReasons
+}
+
+fun getReasonStr(typePos: Int): String {
+    var typeStr = ""
+    if (typePos == 0){
+        typeStr = "N/A"
+    }
+    else if (typePos == 1){
+        typeStr = "Bar-tilt"
+    }
+    else if (typePos == 2){
+        typeStr = "Fatigue"
+    }
+    else {
+        typeStr = "Multiple"
+    }
+    return typeStr
 }
