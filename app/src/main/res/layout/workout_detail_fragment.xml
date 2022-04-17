@@ -30,8 +30,7 @@
 
             <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/workoutEmailTitle"
@@ -56,8 +55,7 @@
 
             <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/workoutGoalTitle"
@@ -83,8 +81,7 @@
 
             <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/workoutTypeTitle"
@@ -110,8 +107,7 @@
 
             <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/workoutTotalRepsTitle"
@@ -137,8 +133,7 @@
 
             <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/workoutTimeStampTitle"
@@ -162,8 +157,7 @@
             </TableRow>
             <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp">
+                android:layout_height="match_parent">
                 <TextView
                     android:id="@+id/workingWeightTitle"
                     android:layout_width="wrap_content"
@@ -198,9 +192,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/custom_border"
             app:layout_constraintTop_toBottomOf="@id/table1"
             android:stretchColumns="0,1"
-            android:background="@drawable/custom_border"
             tools:layout_editor_absoluteX="8dp">
                 <TableRow
                     android:layout_width="wrap_content"
@@ -248,8 +242,8 @@
                 </TableRow>
             <TableRow
                 android:id="@+id/trSet1"
-                android:layout_width="331dp"
-                android:layout_height="408dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.2"
@@ -271,7 +265,7 @@
                 <NumberPicker
                     android:id="@+id/workoutReps1"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:gravity="right"
                     android:padding="3dip"
                     android:layout_marginTop="0dp"
@@ -294,8 +288,8 @@
             </TableRow>
             <TableRow
                 android:id="@+id/trSet2"
-                android:layout_width="331dp"
-                android:layout_height="408dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.2"
@@ -317,11 +311,11 @@
                 <NumberPicker
                     android:id="@+id/workoutReps2"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:gravity="right"
                     android:padding="3dip"
                     android:layout_marginTop="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="1.0"
                     android:value="@={workoutsvm.observableWorkout.repsSet2}"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -340,8 +334,8 @@
             </TableRow>
             <TableRow
                 android:id="@+id/trSet3"
-                android:layout_width="331dp"
-                android:layout_height="408dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.2"
@@ -362,7 +356,7 @@
                 <NumberPicker
                     android:id="@+id/workoutReps3"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:gravity="right"
                     android:padding="3dip"
                     android:layout_marginTop="0dp"
@@ -385,8 +379,8 @@
             </TableRow>
             <TableRow
                 android:id="@+id/trSet4"
-                android:layout_width="331dp"
-                android:layout_height="408dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.2"
@@ -407,7 +401,7 @@
                 <NumberPicker
                     android:id="@+id/workoutReps4"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:gravity="right"
                     android:padding="3dip"
                     android:layout_marginTop="0dp"
@@ -430,8 +424,8 @@
             </TableRow>
             <TableRow
                 android:id="@+id/trSet5"
-                android:layout_width="331dp"
-                android:layout_height="408dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.2"
@@ -452,7 +446,7 @@
                 <NumberPicker
                     android:id="@+id/workoutReps5"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:gravity="right"
                     android:padding="3dip"
                     android:layout_marginTop="0dp"
@@ -482,9 +476,8 @@
             android:id="@+id/linkWorkoutButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="68dp"
             android:text="@string/workoutTutorial"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/editWorkoututton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintHorizontal_chainStyle="packed"

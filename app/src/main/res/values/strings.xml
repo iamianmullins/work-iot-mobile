@@ -50,7 +50,7 @@
     <string name="title_reps">Reps</string>
     <string name="title_set">Set</string>
     <string name="title_fail">Fail Status</string>
-    <string name="workingWeight">Working Weight</string>
+    <string name="workingWeight">Weight</string>
     <string name="workoutGoal">Workout Goal</string>
     <string name="workoutType">Workout Type</string>
     <string name="totalReps">Total Reps</string>

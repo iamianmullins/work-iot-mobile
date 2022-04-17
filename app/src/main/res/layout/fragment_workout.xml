@@ -273,53 +273,78 @@
 
     </LinearLayout>
 
-    <Spinner
-        android:id="@+id/selectGoal"
-        android:layout_width="254dp"
-        android:layout_height="26dp"
-        android:entries="@array/fitnessGoals"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/createButton"
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_border"
+        app:layout_constraintBottom_toTopOf="@+id/exerciseType"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="@+id/exerciseType"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-    <TextView
-        android:id="@+id/workingWeightTitle"
+        <Spinner
+            android:id="@+id/selectGoal"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:backgroundTint="@color/green_dark"
+            android:entries="@array/fitnessGoals"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/createButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.686"
+            app:layout_constraintStart_toStartOf="@+id/exerciseType"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="0.0" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/total"
-        android:textSize="20dp"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/createButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintTop_toBottomOf="@+id/exerciseType"
+        app:layout_constraintVertical_bias="0.586">
 
-    <TextView
-        android:id="@+id/repCounter"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/exerciseType"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toBottomOf="@+id/workingWeightTitle"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/workingWeightTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/total"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exerciseType"
+            app:layout_constraintVertical_bias="0.086" />
 
 
+        <TextView
+            android:id="@+id/repCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exerciseType"
+            app:layout_constraintVertical_bias="0.086" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/createButton"
@@ -340,47 +365,53 @@
 
     <RadioGroup
         android:id="@+id/exerciseType"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/linearLayout2"
+        android:background="@drawable/custom_border"
+        android:gravity="center"
         android:textAlignment="center"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.576">
+        app:layout_constraintVertical_bias="0.284">
 
         <RadioButton
             android:id="@+id/Benchpress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:layout_height="24dp"
+            android:layout_margin="4dp"
             android:checked="false"
             android:layoutDirection="rtl"
             android:text="@string/benchpress"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="16dp" />
 
         <RadioButton
             android:id="@+id/Deadlift"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:layout_height="24dp"
+            android:layout_margin="4dp"
             android:checked="false"
             android:layoutDirection="rtl"
             android:text="@string/deadlift"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="16dp" />
 
         <RadioButton
             android:id="@+id/Squat"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:layout_height="24dp"
+            android:layout_margin="4dp"
             android:checked="true"
             android:layoutDirection="rtl"
             android:text="@string/squat"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="16dp" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
