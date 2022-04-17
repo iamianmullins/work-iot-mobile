@@ -38,7 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:text="User Email"
+                    android:text="@string/hint_email"
                     android:textSize="20sp"
                     android:layout_margin="8dp"
                     tools:text="@string/hint_email" />
@@ -63,11 +63,11 @@
                     android:id="@+id/workoutGoalTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Workout Goal"
+                    android:text="@string/workoutGoal"
                     android:textAlignment="textStart"
                     android:textSize="20sp"
                     android:layout_margin="8dp"
-                    tools:text="Workout Goal" />
+                    tools:text="@string/workoutGoal" />
 
 
                 <Spinner
@@ -90,11 +90,11 @@
                     android:id="@+id/workoutTypeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Workout Type"
+                    android:text="@string/workoutType"
                     android:textAlignment="textStart"
                     android:textSize="20sp"
                     android:layout_margin="8dp"
-                    tools:text="Workout Type" />
+                    tools:text="@string/workoutType"/>
 
                 <Spinner
                     android:id="@+id/workoutType"
@@ -117,11 +117,11 @@
                     android:id="@+id/workoutTotalRepsTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total Reps"
+                    android:text="@string/totalReps"
                     android:textAlignment="textStart"
                     android:textSize="20sp"
                     android:layout_margin="8dp"
-                    tools:text="Total Reps" />
+                    tools:text="@string/totalReps" />
 
                 <TextView
                     android:id="@+id/workoutTotalReps"
@@ -129,7 +129,7 @@
                     android:layout_height="wrap_content"
 
                     android:layout_marginTop="0dp"
-                    android:text="@={workoutsvm.observableWorkout.totalReps}"
+                    android:text="@={``+ workoutsvm.observableWorkout.totalReps}"
                     android:textSize="20sp"
                     android:layout_margin="8dp"
                     tools:text="Total Reps" />
@@ -229,10 +229,10 @@
                         android:textAlignment="center"
                         android:textSize="20sp"
                         android:layout_alignParentTop="true"
-                        android:text="Total reps"
+                        android:text="@string/totalReps"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        tools:text="Total reps" />
+                        tools:text="@string/totalReps" />
                     <TextView
                         android:id="@+id/workoutReasonTitle"
                         android:layout_width="wrap_content"
@@ -240,10 +240,10 @@
                         android:textAlignment="center"
                         android:textSize="20sp"
                         android:layout_alignParentTop="true"
-                        android:text="Fail Status"
+                        android:text="@string/title_fail"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        tools:text="Fail Status" />
+                        tools:text="@string/title_fail" />
 
                 </TableRow>
             <TableRow
@@ -262,10 +262,10 @@
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:layout_alignParentTop="true"
-                    android:text="Set1"
+                    android:text="@string/set_1"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    tools:text="Set1" />
+                    tools:text="@string/set_1" />
 
 
                 <NumberPicker
@@ -308,10 +308,10 @@
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:layout_alignParentTop="true"
-                    android:text="Set2"
+                    android:text="@string/set_2"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    tools:text="Set2" />
+                    tools:text="@string/set_2" />
 
 
                 <NumberPicker
@@ -354,10 +354,10 @@
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:layout_alignParentTop="true"
-                    android:text="Set3"
+                    android:text="@string/set_3"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    tools:text="Set3" />
+                    tools:text="@string/set_3" />
 
                 <NumberPicker
                     android:id="@+id/workoutReps3"
@@ -398,11 +398,11 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:layout_alignParentTop="true"
-                    android:text="Set4"
+                    android:text="@string/set_4"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    tools:text="Set4" />
+                    tools:text="@string/set_4" />
 
                 <NumberPicker
                     android:id="@+id/workoutReps4"
@@ -442,12 +442,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:text="Set5"
+                    android:text="@string/set_5"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    tools:text="Set5" />
+                    tools:text="@string/set_5" />
 
                 <NumberPicker
                     android:id="@+id/workoutReps5"

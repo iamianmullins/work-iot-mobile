@@ -185,3 +185,20 @@ fun getReasonStr(typePos: Int): String {
     }
     return typeStr
 }
+
+
+fun calculatePercentage(value: Int, total: Int): Float {
+    val percentage: Float = (value.toFloat() / total) * 100
+    return  percentage
+}
+
+fun checkSetFailure (reason: String): Boolean{
+    val failList = listOf("Bar-tilt", "Fatigue"
+        //, "Multiple", "Other"
+        )
+    var fail = false
+    if(reason in failList){
+        fail = true
+    }
+    return fail
+}

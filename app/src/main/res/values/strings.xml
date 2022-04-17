@@ -6,6 +6,10 @@
     <string name="deadlift">Deadlifts</string>
     <string name="squat">Squats</string>
 
+    <string name="benchpress1rm">Bench-press(1RM)</string>
+    <string name="deadlift1rm">Deadlifts(1RM)</string>
+    <string name="squat1rm">Squats(1RM)</string>
+
     <string name="hypertrophy">Hypertrophy</string>
     <string name="endurance">Endurance</string>
     <string name="strength">Strength</string>
@@ -13,6 +17,7 @@
     <string name="amount">Amount</string>
     <string name="total">Total Reps</string>
     <string name="reportTitle">Workout History</string>
+    <string name="dashboardTitle">User Dashboard</string>
     <string name="action_workout">Add Workout</string>
     <string name="action_report">Report</string>
     <string name="action_settings">Settings</string>
@@ -20,34 +25,8 @@
     <string name="action_editsettings">Edit Settings</string>
     <string name="action_editworkout">Edit Workout</string>
 
-    <!--String values for the create screen -->
-    <string name="set_1">Set 1</string>
-    <string name="set_2">Set 2</string>
-    <string name="set_3">Set 3</string>
-    <string name="set_4">Set 4</string>
-    <string name="set_5">Set 5</string>
-
-    <string name="success_1">Success 1</string>
-    <string name="success_2">Success 2</string>
-    <string name="success_3">Success 3</string>
-    <string name="success_4">Success 4</string>
-    <string name="success_5">Success 5</string>
-
-    <string name="exercise_bench">Bench-Press</string>
-    <string name="exercise_deadlift">Deadlifts</string>
-    <string name="exercise_squat">Squats</string>
-
-    <string name="title_reps">Reps</string>
-    <string name="title_set">Set</string>
-    <string name="title_fail">Fail Reason</string>
-    <string name="workingWeight">Working Weight</string>
-
-
     <!--Navigation Drawer -->
-    <string name="action_share">Share</string>
-    <string name="action_send">Send</string>
     <string name="group_settings">Settings</string>
-
     <string name="nav_header_title">WorkIOT</string>
     <string name="nav_header_subtitle">iamianmullins@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -68,12 +47,34 @@
 
     <!-- Workout detail fragment -->
     <string name="workoutDetails">Workout Details</string>
-    <string name="exercise">Exercise performed :</string>
-    <string name="reps1">Set 1 reps :</string>
-    <string name="reason1">Set 1 fail reason :</string>
-    <string name="timestamp">Timestamp :</string>
+    <string name="title_reps">Reps</string>
+    <string name="title_set">Set</string>
+    <string name="title_fail">Fail Status</string>
+    <string name="workingWeight">Working Weight</string>
+    <string name="workoutGoal">Workout Goal</string>
+    <string name="workoutType">Workout Type</string>
+    <string name="totalReps">Total Reps</string>
+    <string name="timestamp">Timestamp</string>
+    <string name="set_1">Set 1</string>
+    <string name="set_2">Set 2</string>
+    <string name="set_3">Set 3</string>
+    <string name="set_4">Set 4</string>
+    <string name="set_5">Set 5</string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
+
+    <!-- Dashboard fragment -->
+    <string name="totalWorkouts">Total Workouts</string>
+    <string name="totalBenchpress">Bench-press Workouts</string>
+    <string name="totalDeadlifts">Deadlift Workouts</string>
+    <string name="totalSquats">Squat Workouts</string>
+    <string name="dashboardHeading">Lifetime Stats</string>
+    <string name="dashboardHeadingPcnt">Lifetime Stats %</string>
+    <string name="dashboardHeadFail">Fail Analysis</string>
+    <string name="topFailReason">Top Fail Reason</string>
+    <string name="topFailSet">Top Fail Set</string>
+    <string name="zero">N/A</string>
+
 
     <!-- START Firebase Resources-->
     <string name="label_emailpassword">Email/Password Authentication</string>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settingsFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/cardWorkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@drawable/custom_border">
+
+            <ImageView
+                android:id="@+id/imageIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@mipmap/ic_launcher_round" />
+
+            <TableLayout
+                android:id="@+id/heading1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageIcon"
+                android:layout_alignStart="@+id/imageIcon"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+                <TextView
+                    android:id="@+id/dashboardHeading"
+                    android:layout_width="360dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/dashboardHeading"
+                    android:textAlignment="center"
+                    android:layout_marginTop="16dp"
+                    android:textSize="20sp"
+                    tools:text="@string/dashboardHeading" />
+            </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/table2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/heading1"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp">
+
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/dashboardTotalTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/totalWorkouts"
+                        android:textSize="20sp"
+                        tools:text="@string/totalWorkouts" />
+
+                    <TextView
+                        android:id="@+id/totalWorkouts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/zero"
+                        android:textSize="20sp"
+                        tools:text="@string/zero" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/totalRepsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutType"
+                        android:text="@string/totalReps"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        tools:text="@string/totalReps" />
+
+                    <TextView
+                        android:id="@+id/totalReps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTimeStampTitle"
+                        android:layout_alignStart="@+id/workoutTimeStampTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/zero"
+                        android:textSize="20sp"
+                        tools:text="@string/zero" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/workoutGoalTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutEmail"
+                        android:text="@string/totalBenchpress"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        tools:text="@string/totalBenchpress" />
+
+                    <TextView
+                        android:id="@+id/benchCounter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutGoalTitle"
+                        android:layout_alignStart="@+id/workoutGoalTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/zero"
+                        android:textSize="20sp"
+                        tools:text="@string/zero" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/workoutTypeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutGoal"
+                        android:text="@string/totalDeadlifts"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        tools:text="@string/totalDeadlifts" />
+
+                    <TextView
+                        android:id="@+id/deadliftCounter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTypeTitle"
+                        android:layout_alignStart="@+id/workoutTypeTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/zero"
+                        android:textSize="20sp"
+                        tools:text="@string/zero" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/workoutTotalRepsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutType"
+                        android:text="@string/totalSquats"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        tools:text="@string/totalSquats" />
+
+                    <TextView
+                        android:id="@+id/squatCounter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTotalRepsTitle"
+                        android:layout_alignStart="@+id/workoutTotalRepsTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/zero"
+                        android:textSize="20sp"
+                        tools:text="@string/zero" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/heading2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/table2"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        android:id="@+id/dashboardHeading2"
+                        android:layout_width="360dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/dashboardHeadingPcnt"
+                        android:textAlignment="center"
+                        android:layout_marginTop="16dp"
+                        android:textSize="20sp"
+                        tools:text="@string/dashboardHeadingPcnt" />
+                </TableRow>
+            </TableLayout>
+            <TableLayout
+                android:id="@+id/table3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/heading2"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/workoutGoalTitlePcnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutEmail"
+                        android:text="@string/totalBenchpress"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        tools:text="@string/totalBenchpress" />
+
+                    <TextView
+                        android:id="@+id/benchCounterPcnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutGoalTitle"
+                        android:layout_alignStart="@+id/workoutGoalTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/zero"
+                        android:textSize="20sp"
+                        tools:text="@string/zero" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/workoutTypeTitlePcnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutGoal"
+                        android:text="@string/totalDeadlifts"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        tools:text="@string/totalDeadlifts" />
+
+                    <TextView
+                        android:id="@+id/deadliftCounterPcnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTypeTitle"
+                        android:layout_alignStart="@+id/workoutTypeTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/zero"
+                        android:textSize="20sp"
+                        tools:text="@string/zero" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/workoutTotalRepsTitlePcnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutType"
+                        android:text="@string/totalSquats"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        tools:text="@string/totalSquats" />
+
+                    <TextView
+                        android:id="@+id/squatCounterPcnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTotalRepsTitle"
+                        android:layout_alignStart="@+id/workoutTotalRepsTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/zero"
+                        android:textSize="20sp"
+                        tools:text="@string/zero" />
+                </TableRow>
+            </TableLayout>
+
+
+            <TableLayout
+                android:id="@+id/heading3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/table3"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        android:id="@+id/dashboardHeading3"
+                        android:layout_width="360dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/dashboardHeadFail"
+                        android:textAlignment="center"
+                        android:layout_marginTop="16dp"
+                        android:textSize="20sp"
+                        tools:text="@string/dashboardHeadFail" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/table4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/heading3"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/mainFailureTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutEmail"
+                        android:text="@string/topFailReason"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        tools:text="@string/topFailReason" />
+
+                    <TextView
+                        android:id="@+id/mainFailure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutGoalTitle"
+                        android:layout_alignStart="@+id/workoutGoalTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/zero"
+                        android:textSize="20sp"
+                        tools:text="@string/zero" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/mainFailureSetTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutGoal"
+                        android:text="@string/topFailSet"
+                        android:textAlignment="textStart"
+                        android:textSize="20sp"
+                        tools:text="@string/topFailSet" />
+
+                    <TextView
+                        android:id="@+id/mainFailureSet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTypeTitle"
+                        android:layout_alignStart="@+id/workoutTypeTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/zero"
+                        android:textSize="20sp"
+                        tools:text="@string/zero" />
+                </TableRow>
+
+            </TableLayout>
+
+
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

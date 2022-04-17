@@ -42,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:id="@+id/settingsEmailTitle"
                     android:padding="3dip"
-                    android:text="User Email: "
+                    android:text="@string/hint_email"
                     tools:text="@string/hint_email"
                     android:textSize="20sp"/>
                 <TextView
@@ -90,8 +90,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:textSize="20sp"
-                    android:text="@string/benchpress"
-                    tools:text="@string/benchpress" />
+                    android:text="@string/benchpress1rm"
+                    tools:text="@string/benchpress1rm" />
 
 
             <NumberPicker
@@ -119,8 +119,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:textSize="20sp"
-                    android:text="@string/deadlift"
-                    tools:text="@string/deadlift" />
+                    android:text="@string/deadlift1rm"
+                    tools:text="@string/deadlift1rm" />
 
 
                 <NumberPicker
@@ -150,8 +150,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:textSize="20sp"
-                    android:text="@string/benchpress"
-                    tools:text="@string/benchpress" />
+                    android:text="@string/squat1rm"
+                    tools:text="@string/squat1rm" />
 
 
                 <NumberPicker
@@ -180,9 +180,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="12dp"
                 android:layout_toEndOf="@+id/settingsOnermSq"
-                android:text="Goal"
+                android:text="@string/workoutGoal"
                 android:textSize="20sp"
-                tools:text="Goal" />
+                tools:text="@string/workoutGoal" />
 
             <Spinner
                 android:id="@+id/settingsGoal"

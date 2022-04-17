@@ -144,7 +144,7 @@
                         android:layout_alignStart="@+id/workoutTotalRepsTitle"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="0dp"
-                        android:text="@{workout.totalReps}"
+                        android:text="@{``+workout.totalReps}"
                         android:textSize="20sp"
                         tools:text="Total Reps" />
                 </TableRow>

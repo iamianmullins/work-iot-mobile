@@ -7,12 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.get
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.databinding.SettingsEditFragmentBinding
 import ie.wit.work_iot_mobile.ui.auth.LoggedInViewModel
 import ie.wit.work_iot_mobile.ui.settings.SettingsViewModel

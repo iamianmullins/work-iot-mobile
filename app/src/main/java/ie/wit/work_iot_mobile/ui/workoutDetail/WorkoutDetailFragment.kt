@@ -54,7 +54,7 @@ class WorkoutDetailFragment : Fragment() {
 
         fragBinding.editWorkoututton.setOnClickListener {
             val totalreps = getTotal()
-            fragBinding.workoutsvm?.observableWorkout!!.value!!.totalReps= totalreps.toString();
+            fragBinding.workoutsvm?.observableWorkout!!.value!!.totalReps= totalreps;
             fragBinding.workoutsvm?.observableWorkout!!.value!!.timestamp = getTime()
 
             //Set Goal Position

@@ -23,7 +23,7 @@ data class WorkoutModel(
     var reasonSet4: String = "N/A",
     var repsSet5: Int = 0,
     var reasonSet5: String = "N/A",
-    var totalReps: String = "0",
+    var totalReps: Int = 0,
     var timestamp: String = "N/A",
     val email: String = "jim@user.com") : Parcelable
 {

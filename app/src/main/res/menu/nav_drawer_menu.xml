@@ -5,28 +5,28 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/dashboardFragment"
-            android:icon="@drawable/ic_dashboard_24"
-            android:title="@string/action_dashboard" />
-        <item
             android:id="@+id/workoutFragment"
             android:icon="@drawable/ic_menu_create"
             android:title="@string/action_workout" />
         <item
+            android:id="@+id/dashboardFragment"
+            android:icon="@drawable/ic_menu_dashboard"
+            android:title="@string/action_dashboard" />
+        <item
             android:id="@+id/reportFragment"
             android:icon="@drawable/ic_menu_report"
             android:title="@string/action_report" />
-        <item
-            android:id="@+id/aboutFragment"
-            android:icon="@drawable/ic_menu_aboutus"
-            android:title="@string/action_about" />
     </group>
 
     <item android:title="@string/group_settings">
         <menu>
             <item
-                android:id="@+id/settingsFragment"
+                android:id="@+id/aboutFragment"
                 android:icon="@drawable/ic_menu_aboutus"
+                android:title="@string/action_about" />
+            <item
+                android:id="@+id/settingsFragment"
+                android:icon="@drawable/ic_menu_settings"
                 android:title="@string/action_settings" />
         </menu>
     </item>

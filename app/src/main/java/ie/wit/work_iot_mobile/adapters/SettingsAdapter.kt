@@ -12,8 +12,9 @@ interface SettingsClickListener {
     fun onSettingsClick(settings: SettingsModel)
 }
 
-class SettingsAdapter constructor(private var settings: ArrayList<SettingsModel>,
-                                 private val listener: SettingsClickListener)
+class SettingsAdapter(private var settings: ArrayList<SettingsModel>,
+                      private val listener: SettingsClickListener
+)
     : RecyclerView.Adapter<SettingsAdapter.MainHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {

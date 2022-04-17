@@ -17,7 +17,7 @@ interface WorkoutClickListener {
 class WorkoutAdapter constructor(private var workouts: ArrayList<WorkoutModel>,
                                  private val listener: WorkoutClickListener,
                                  private val readOnly: Boolean)
-: RecyclerView.Adapter<WorkoutAdapter.MainHolder>() {
+    : RecyclerView.Adapter<WorkoutAdapter.MainHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
         val binding = CardWorkoutBinding

@@ -9,7 +9,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import ie.wit.work_iot_mobile.firebase.FirebaseImageManager
 import ie.wit.work_iot_mobile.R
 import timber.log.Timber
 

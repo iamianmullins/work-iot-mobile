@@ -10,9 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import ie.wit.work_iot_mobile.R
 import ie.wit.work_iot_mobile.adapters.SettingsClickListener
 import ie.wit.work_iot_mobile.adapters.SettingsAdapter

@@ -1,6 +1,5 @@
 package ie.wit.work_iot_mobile.ui.settings
 
-
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

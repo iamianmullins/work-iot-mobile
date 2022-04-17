@@ -211,7 +211,7 @@ class WorkoutFragment : Fragment() {
                 loggedInViewModel.liveFirebaseUser,
                 WorkoutModel(
                     exerciseType = exerciseType,
-                    totalReps = totalRepCount.toString(),
+                    totalReps = totalRepCount,
                     repsSet1 = repsSet1,
                     reasonSet1 = reasonSet1,
                     repsSet2 = repsSet2,
