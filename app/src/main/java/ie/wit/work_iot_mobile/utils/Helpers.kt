@@ -162,8 +162,11 @@ fun getFailPos(reasonList: MutableList<String>): MutableList<Int> {
         else if (reason == "Multiple"){
             returnReasons.add(3)
         }
-        else {
+        else if (reason == "Speed"){
             returnReasons.add(4)
+        }
+        else if (reason == "Other"){
+            returnReasons.add(5)
         }
     }
     return returnReasons
@@ -180,8 +183,14 @@ fun getReasonStr(typePos: Int): String {
     else if (typePos == 2){
         typeStr = "Fatigue"
     }
-    else {
+    else if (typePos == 3){
         typeStr = "Multiple"
+    }
+    else if (typePos == 4){
+        typeStr = "Speed"
+    }
+    else {
+        typeStr = "Other"
     }
     return typeStr
 }
@@ -193,7 +202,7 @@ fun calculatePercentage(value: Int, total: Int): Float {
 }
 
 fun checkSetFailure (reason: String): Boolean{
-    val failList = listOf("Bar-tilt", "Fatigue"
+    val failList = listOf("Bar-tilt", "Fatigue", "Speed"
         //, "Multiple", "Other"
         )
     var fail = false

@@ -123,6 +123,7 @@
         <item>Bar-tilt</item>
         <item>Fatigue</item>
         <item>Multiple</item>
+        <item>Speed</item>
         <item>Other</item>
     </string-array>
 
