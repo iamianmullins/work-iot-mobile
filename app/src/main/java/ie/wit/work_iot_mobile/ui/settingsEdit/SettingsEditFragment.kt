@@ -46,22 +46,17 @@ class SettingsEditFragment : Fragment() {
 
         fragBinding.editSettingsButton.setOnClickListener {
             var goal = fragBinding.settingsvm?.observableSettings!!.value!!.exerciseGoal!!.toLowerCase()
-            if (goal !in goals) {
-                Toast.makeText(context, "Please enter a valid goal! (Hypertrophy, Endurance, Strength", Toast.LENGTH_LONG).show()
-            } else {
+            //Set Workout goal
+            var goalPosition = fragBinding.settingsGoal.selectedItemPosition
+            var goalString = getGoalStr(goalPosition)
+            fragBinding.settingsvm?.observableSettings!!.value!!.exerciseGoal = goalString
 
-                //Set Workout goal
-                var goalPosition = fragBinding.settingsGoal.selectedItemPosition
-                var goalString = getGoalStr(goalPosition)
-                fragBinding.settingsvm?.observableSettings!!.value!!.exerciseGoal = goalString
+            detailViewModel.updateSettings(
+                loggedInViewModel.liveFirebaseUser.value?.uid!!,
+                args.settingsId, fragBinding.settingsvm?.observableSettings!!.value!!
+            )
+            findNavController().navigateUp()
 
-
-                detailViewModel.updateSettings(
-                    loggedInViewModel.liveFirebaseUser.value?.uid!!,
-                    args.settingsId, fragBinding.settingsvm?.observableSettings!!.value!!
-                )
-                findNavController().navigateUp()
-            }
         }
 
         return root

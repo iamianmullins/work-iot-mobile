@@ -25,6 +25,8 @@ data class WorkoutModel(
     var reasonSet5: String = "N/A",
     var totalReps: Int = 0,
     var timestamp: String = "N/A",
+    var latitude: Double = 0.0,
+    var longitude: Double = 0.0,
     val email: String = "jim@user.com") : Parcelable
 {
     @Exclude
@@ -47,6 +49,8 @@ data class WorkoutModel(
             "reasonSet5" to reasonSet5,
             "totalReps" to totalReps,
             "timestamp" to timestamp,
+            "latitude" to latitude,
+            "longitude" to longitude,
             "email" to email
         )
     }

@@ -32,41 +32,27 @@
                 android:contentDescription="@string/app_name"
                 app:srcCompat="@mipmap/ic_launcher_round" />
 
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageIcon"
+                android:layout_marginTop="0dp"
+                android:text="@{`` + workout.email}"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:layout_marginBottom="8dp"
+                tools:text="@string/hint_email" />
+
 
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imageIcon"
+                android:layout_below="@+id/email"
                 android:layout_alignStart="@+id/imageIcon"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp">
 
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:id="@+id/workoutEmailTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-
-                    android:text="User Email"
-                    android:textSize="20sp"
-                    tools:text="@string/hint_email" />
-
-                <TextView
-                    android:id="@+id/workoutEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/workoutEmailTitle"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="0dp"
-                    android:text="@{workout.email}"
-                    android:textSize="20sp"
-                    tools:text="@string/hint_email" />
-                </TableRow>
                 <TableRow
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -76,7 +62,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/workoutEmail"
                     android:text="Workout Goal"
                     android:textSize="20sp"
                     android:textAlignment="textStart"
@@ -158,10 +143,10 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_toEndOf="@+id/workoutType"
-                        android:text="Time Stamp"
+                        android:text="@string/timestamp"
                         android:textSize="20sp"
                         android:textAlignment="textStart"
-                        tools:text="Time Stamp" />
+                        tools:text="@string/timestamp" />
 
                     <TextView
                         android:id="@+id/workoutTimeStamp"
@@ -173,8 +158,65 @@
                         android:layout_marginTop="0dp"
                         android:text="@{workout.timestamp}"
                         android:textSize="20sp"
-                        tools:text="Time stamp" />
+                        tools:text="@string/timestamp" />
                 </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        android:id="@+id/longitudeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutType"
+                        android:text="@string/longitude"
+                        android:textSize="20sp"
+                        android:textAlignment="textStart"
+                        tools:text="@string/longitude" />
+
+                    <TextView
+                        android:id="@+id/longitude"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTimeStampTitle"
+                        android:layout_alignStart="@+id/workoutTimeStampTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@{`` + workout.longitude}"
+                        android:textSize="20sp"
+                        tools:text="@string/longitude" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        android:id="@+id/latitudeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/workoutType"
+                        android:text="@string/latitude"
+                        android:textSize="20sp"
+                        android:textAlignment="textStart"
+                        tools:text="@string/latitude" />
+
+                    <TextView
+                        android:id="@+id/latitude"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/workoutTimeStampTitle"
+                        android:layout_alignStart="@+id/workoutTimeStampTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@{`` + workout.latitude}"
+                        android:textSize="20sp"
+                        tools:text="@string/latitude" />
+                </TableRow>
+
             </TableLayout>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

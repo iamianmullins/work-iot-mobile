@@ -55,6 +55,8 @@
     <string name="workoutType">Workout Type</string>
     <string name="totalReps">Total Reps</string>
     <string name="timestamp">Timestamp</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
     <string name="set_1">Set 1</string>
     <string name="set_2">Set 2</string>
     <string name="set_3">Set 3</string>
